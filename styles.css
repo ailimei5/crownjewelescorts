@@ -1,6 +1,6 @@
 /* ===== Base (burgundy + polished gold theme) ===== */
 :root{
-  --bg:#1a0f11;
+  --bg:#f5f2f3;
   --surface:#2a1417;
   --ink:#f7f7f7;
   --muted:#b9a9a9;
@@ -105,17 +105,6 @@ body{
 .badge.available{color:#4ade80;border-color:#2b6b4a}
 .badge.limited{color:#f59e0b;border-color:#7a4f09}
 .badge.booked{color:#ef4444;border-color:#7a1e1e}
-
-/* Rates */
-.rate-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
-@media (max-width:900px){.rate-cards{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.rate-cards{grid-template-columns:1fr}}
-.rate{
-  background:linear-gradient(180deg, rgba(109,29,42,.25), rgba(69,19,28,.12));
-  border:1px solid var(--ring); border-radius:var(--radius);
-  padding:16px; text-align:center; box-shadow:var(--shadow)
-}
-.amount{font-weight:800;font-size:1.3rem;color:var(--gold)}
 
 /* Booking form */
 .form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
