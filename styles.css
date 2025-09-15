@@ -34,7 +34,9 @@ body{
 .muted{color:var(--muted)} .small{font-size:.9rem}
 .title{font-size:1.8rem;margin:0 0 6px}
 
-/* Nav */
+/* =========================
+   Nav
+   ========================= */
 .nav{
   position:sticky; top:0; z-index:30;
   background:rgba(123,12,23,.9);
@@ -52,24 +54,59 @@ body{
   padding:10px 14px;font-weight:700;text-decoration:none;display:inline-block
 }
 .btn:hover{filter:brightness(1.08)}
-.menu{display:none}
-@media (max-width:900px){.links,.call{display:none}.menu{display:block;margin-left:auto}}
 
-/* Drawer */
+/* Hamburger menu button */
+.menu{
+  display:none;
+  font-size:28px;
+  line-height:1;
+  background:transparent;
+  border:0;
+  color:var(--ink);
+  cursor:pointer;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width:900px){
+  /* Hide links but keep call visible */
+  .links{display:none}
+  .menu{display:block;margin-left:auto}
+  /* shrink call button on mobile */
+  .call{
+    display:inline-block;
+    padding:8px 10px;
+    font-size:.95rem;
+    margin-left:8px;
+  }
+}
+
+/* =========================
+   Drawer (mobile menu)
+   ========================= */
 .drawer{
-  position:fixed; inset:0 auto 0 100%; top:58px;
-  width:280px; background:#8f0f19; color:var(--ink);
+  position:fixed; 
+  inset:0 auto 0 100%; 
+  top:58px;
+  width:280px; 
+  background:#8f0f19; 
+  color:var(--ink);
   border-left:1px solid var(--ring);
-  transform:translateX(110%); transition:.25s; z-index:40;
+  transform:translateX(110%); 
+  transition:.25s; 
+  z-index:40;
 }
 .drawer.open{transform:translateX(0)}
 .drawer-links{display:flex;flex-direction:column}
 .drawer-links a{
-  padding:14px 16px; color:var(--ink); text-decoration:none;
+  padding:14px 16px; 
+  color:var(--ink); 
+  text-decoration:none;
   border-bottom:1px solid var(--ring)
 }
 
-/* Hero */
+/* =========================
+   Hero
+   ========================= */
 .hero{
   position:relative; min-height:54vh; display:grid; place-items:center;
   border-bottom:1px solid var(--ring)
@@ -88,7 +125,9 @@ body{
   box-shadow:inset 0 0 0 1px rgba(217,184,90,.18)
 }
 
-/* Sections */
+/* =========================
+   Sections
+   ========================= */
 .section{padding:40px 0}
 .section-alt{
   padding:40px 0;
@@ -97,7 +136,9 @@ body{
   border-bottom:1px solid var(--ring)
 }
 
-/* Cards grid */
+/* =========================
+   Cards grid
+   ========================= */
 .cards{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:20px;margin-top:14px
@@ -114,7 +155,9 @@ body{
 }
 .card:hover{transform:translateY(-3px);border-color:var(--gold)}
 
-/* Images */
+/* =========================
+   Images
+   ========================= */
 .thumb-img{
   width:100%; height:280px; object-fit:cover; display:block;
   border-bottom:1px solid var(--ring)
@@ -122,7 +165,9 @@ body{
 /* Placeholder for any card without image */
 .thumb{aspect-ratio:4/5;background:linear-gradient(135deg,#8f0f19,#5a0910)}
 
-/* Card body */
+/* =========================
+   Card body
+   ========================= */
 .card-body{padding:14px}
 .row{display:flex;align-items:center;justify-content:space-between}
 .price{color:var(--gold)}
@@ -134,7 +179,9 @@ body{
 .badge.limited{color:#f59e0b;border-color:#7a4f09;background:#3b1215}
 .badge.booked{color:#ef4444;border-color:#7a1e1e;background:#3b1215}
 
-/* Forms */
+/* =========================
+   Forms
+   ========================= */
 .form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
 @media (max-width:900px){.form{grid-template-columns:1fr}}
 .form input,.form textarea{
@@ -144,21 +191,25 @@ body{
 .form textarea{grid-column:1 / -1}
 .form button{grid-column:1 / -1}
 
-/* Footer */
+/* =========================
+   Footer
+   ========================= */
 .footer{
   border-top:1px solid var(--ring);
   background:#6d0b14; color:var(--muted); padding:22px 0
 }
 .foot{display:flex;flex-direction:column;gap:6px;text-align:center}
 
-/* Clickable card link */
+/* =========================
+   Clickable card link
+   ========================= */
 .card-link{display:block;color:inherit;text-decoration:none}
 .card-link:hover .card{border-color:var(--gold)}
 
-/* ===== Profile Pages ===== */
-
+/* =========================
+   Profile Pages
+   ========================= */
 .profile-hero{padding-top:28px}
-
 .profile-header{
   display:grid; grid-template-columns:1.2fr 1fr;
   gap:20px; align-items:center
@@ -185,7 +236,9 @@ body{
 }
 .pill.success{color:#4ade80;border-color:#2b6b4a;background:#3b1215}
 
-/* Gallery */
+/* =========================
+   Gallery
+   ========================= */
 .gallery{
   margin-top:12px; display:grid;
   grid-template-columns:repeat(3,1fr); gap:12px
@@ -198,7 +251,9 @@ body{
   border-radius:12px; border:1px solid var(--ring); box-shadow:var(--shadow)
 }
 
-/* Details grid */
+/* =========================
+   Details grid
+   ========================= */
 .profile-grid{
   display:grid; grid-template-columns:1.4fr .8fr;
   gap:20px; align-items:start

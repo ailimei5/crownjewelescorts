@@ -7,7 +7,6 @@
   <meta name="description" content="CrownJewel — Montréal. Elegant companions, $280, discreet bookings.">
   <link rel="canonical" href="https://www.crownjewel.com/" />
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="main.js"></script>
 </head>
 <body>
   <!-- Top Nav -->
@@ -21,22 +20,24 @@
         <a href="#employment">Employment</a>
         <a href="#about">About</a>
       </nav>
-      <a class="btn call" href="tel: 5142457931">514-245-7931</a>
-      <button class="menu" aria-label="Open menu">☰</button>
+      <!-- Phone number visible everywhere -->
+      <a class="btn call" href="tel:5142457931">514-245-7931</a>
+      <!-- Hamburger -->
+      <button id="menuButton" class="menu" aria-controls="drawer" aria-expanded="false" aria-label="Open menu">☰</button>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
     <nav class="drawer-links">
       <a href="#home">Home</a>
       <a href="#models">Models</a>
       <a href="#booking">Booking</a>
       <a href="#employment">Employment</a>
       <a href="#about">About</a>
-      <a class="btn call" href="tel: 5142457931">514-245-7931</a>
+      <a class="btn call" href="tel:5142457931">Call 514-245-7931</a>
     </nav>
-  </div>
+  </aside>
 
   <!-- Hero -->
   <section id="home" class="hero" aria-label="Hero">
@@ -78,26 +79,27 @@
       <h2 class="title">Models</h2>
       <p class="muted center">Montréal • All bookings subject to verification</p>
       <div class="cards">
-        <!-- Ruby with image -->
+        <!-- Ruby -->
         <article class="card">
           <a class="card-link" href="profiles/ruby.html" aria-label="View Ruby profile">
             <img class="thumb-img" src="images/ruby1.jpg" alt="Ruby — portrait" />
             <div class="card-body">
               <div class="row">
                 <h3>Ruby</h3>
-              <span class="badge available">Available</span>
+                <span class="badge available">Available</span>
+              </div>
             </div>
           </a>
         </article>
-
-        <!-- Rosie with image -->
+        <!-- Rosie -->
         <article class="card">
           <a class="card-link" href="profiles/rosie.html" aria-label="View Rosie profile">
             <img class="thumb-img" src="images/rosie1.jpg" alt="Rosie — portrait" />
             <div class="card-body">
               <div class="row">
                 <h3>Rosie</h3>
-              <span class="badge available">Available</span>
+                <span class="badge available">Available</span>
+              </div>
             </div>
           </a>
         </article>
@@ -127,25 +129,25 @@
   </section>
 
   <!-- Employment -->
-<section id="employment" class="section section-alt">
-  <div class="wrap">
-    <h2 class="title">Employment</h2>
-    <p class="muted">
-      We’re always interested in welcoming professional, discreet, and reliable individuals to our team.
-    </p>
-    <p>
-      If you’d like to explore working with CrownJewel, please send your résumé and a brief introduction to 
-      <a href="mailto:Crownjewelescorts@gmail.com">Crownjewelescorts@gmail.com</a> or fill out our application form.
-    </p>
-    <form class="form">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone" />
-      <textarea rows="6" placeholder="Tell us about your experience, availability, and why you’d like to join"></textarea>
-      <button class="btn" type="submit">Submit Application</button>
-    </form>
-  </div>
-</section>
+  <section id="employment" class="section section-alt">
+    <div class="wrap">
+      <h2 class="title">Employment</h2>
+      <p class="muted">
+        We’re always interested in welcoming professional, discreet, and reliable individuals to our team.
+      </p>
+      <p>
+        If you’d like to explore working with CrownJewel, please send your résumé and a brief introduction to 
+        <a href="mailto:Crownjewelescorts@gmail.com">Crownjewelescorts@gmail.com</a> or fill out our application form.
+      </p>
+      <form class="form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone" />
+        <textarea rows="6" placeholder="Tell us about your experience, availability, and why you’d like to join"></textarea>
+        <button class="btn" type="submit">Submit Application</button>
+      </form>
+    </div>
+  </section>
 
   <!-- About -->
   <section id="about" class="section section-alt">
@@ -166,8 +168,36 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
+    // Year auto-update
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Drawer / mobile menu toggle
+    (function () {
+      const btn = document.getElementById('menuButton');
+      const drawer = document.getElementById('drawer');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        drawer.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        setTimeout(() => { if (!drawer.classList.contains('open')) drawer.hidden = true; }, 250);
+      }
+      btn.addEventListener('click', () => {
+        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+      });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+      document.addEventListener('click', e => {
+        if (drawer.classList.contains('open') && !drawer.contains(e.target) && e.target !== btn) closeDrawer();
+      });
+    })();
   </script>
 </body>
 </html>
