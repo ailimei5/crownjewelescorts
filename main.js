@@ -10,7 +10,7 @@ if (menuBtn && drawer) {
 
 // ===== Google Sheets submission =====
 // Replace with your Apps Script Web App URL (ends with /exec)
-const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbylYMzEJHRdSjm7jVDLpwSVb18ySwtNapnOHHyEDR84MzaD5KjjgLXSup20pj8kYGq0Qg/exec';
+const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyHpqiHMCvGEkhiXI5ib36oiNYwrQ0dy0tWndzrQI3M/dev';
 
 async function sendToSheet(formEl, formType) {
   const data = new FormData(formEl);
