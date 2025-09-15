@@ -110,15 +110,16 @@
     <div class="wrap">
       <h2 class="title">Booking</h2>
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd0Wy24sHfWIAa-EgAsxoDbHrJ6U4CfuKRv8ZWXL8B7m7My8Q/viewform?embedded=true" width="640" height="1088" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      <form class="form">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="Phone" />
-        <input type="text" placeholder="Preferred Date & Time" />
-        <input type="text" placeholder="Model Name" />
-        <textarea rows="6" placeholder="Request details (hours, venue, occasion)"></textarea>
+      <form id="bookingForm">
+        <input name="fullname" placeholder="Full Name" required />
+        <input name="email" type="email" placeholder="Email Address" required />
+        <input name="phone" placeholder="Phone (optional)" />
+        <input name="datetime" placeholder="Preferred Date & Time" />
+        <input name="model" placeholder="Model (optional)" />
+        <textarea name="details" rows="6" placeholder="Request details (hours, venue, occasion)"></textarea>
         <button class="btn" type="submit">Submit Request</button>
-      </form>
+</form>
+
       <ul class="notes small">
         <li>Mutual respect and discretion are essential.</li>
         <li>Time begins at the scheduled appointment; extensions subject to availability.</li>
