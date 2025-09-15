@@ -109,16 +109,15 @@
   <section id="booking" class="section">
     <div class="wrap">
       <h2 class="title">Booking</h2>
-      <form id="bookingForm">
-        <input name="fullname" placeholder="Full Name" required />
-        <input name="email" type="email" placeholder="Email Address" required />
-        <input name="phone" placeholder="Phone (optional)" />
-        <input name="datetime" placeholder="Preferred Date & Time" />
-        <input name="model" placeholder="Model (optional)" />
-        <textarea name="details" rows="6" placeholder="Request details (hours, venue, occasion)"></textarea>
+      <form class="form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone" />
+        <input type="text" placeholder="Preferred Date & Time" />
+        <input type="text" placeholder="Model Name" />
+        <textarea rows="6" placeholder="Request details (hours, venue, occasion)"></textarea>
         <button class="btn" type="submit">Submit Request</button>
       </form>
-
       <ul class="notes small">
         <li>Mutual respect and discretion are essential.</li>
         <li>Time begins at the scheduled appointment; extensions subject to availability.</li>
