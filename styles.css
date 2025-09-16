@@ -1,4 +1,4 @@
-/* CrownJewel — White Background, Phone Left / Brand Right, Grid Cards */
+/* CrownJewel — Compact Grid Homepage (white), phone left / brand right */
 
 :root{
   --bg:#ffffff;
@@ -6,7 +6,7 @@
   --muted:#666666;
   --gold:#d9b85a;
   --ring:#e6e6e6;
-  --radius:14px;
+  --radius:12px;
 }
 
 /* Base */
@@ -19,85 +19,68 @@ body{
   line-height:1.6;
 }
 
-.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+/* Utilities */
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
 .center{text-align:center}
 .small{font-size:.92rem}
 .muted{color:var(--muted)}
-.title{font-size:1.9rem;margin:0 0 12px}
+.title{font-size:1.6rem;margin:0 0 10px}
 
-/* Top bar */
-.nav{
-  position:sticky;top:0;z-index:10;
-  background:#fff;border-bottom:1px solid var(--ring)
-}
-.nav-inner{
-  display:flex;align-items:center;justify-content:space-between;padding:12px 0
-}
-.phone{
-  font-weight:800;text-decoration:none;color:var(--gold)
-}
-.brand{
-  font-weight:800;text-decoration:none;color:var(--ink)
-}
-
-/* Centered logo on page */
-.centered-logo{
-  text-align:center;
-  margin:20px 0 10px;
-}
-.centered-logo img{
-  width:180px;
-  height:auto;
-  opacity:.9;
-}
+/* Header */
+.nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--ring)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+.phone{font-weight:800;text-decoration:none;color:var(--gold)}
+.brand{font-weight:800;text-decoration:none;color:var(--ink)}
 
 /* Sections */
-.section{padding:36px 0;border-bottom:1px solid var(--ring)}
+.section{padding:24px 0;border-bottom:1px solid var(--ring)}
 
-/* Cards grid (models side by side) */
-.cards{
+/* ===== Models: compact grid ===== */
+#models .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-  margin-top:20px;
+  grid-template-columns:repeat(auto-fill, minmax(180px,1fr)); /* many small cards */
+  gap:14px;
+  margin-top:12px;
 }
-.card{
-  background:#fff;border:1px solid var(--ring);border-radius:var(--radius);
-  overflow:hidden;text-align:center;
-  box-shadow:0 4px 14px rgba(0,0,0,.04);
-  padding-bottom:14px;
-}
-.card-link{display:block;color:inherit;text-decoration:none}
-.card-link:hover .card-body h2{color:#000} /* subtle hover */
 
-.thumb-img{
+#models .card{
+  background:#fff;
+  border:1px solid var(--ring);
+  border-radius:var(--radius);
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+.card-link{display:block;color:inherit;text-decoration:none}
+
+#models .thumb-img{
   width:100%;
-  aspect-ratio:4/5;
+  height:220px;                 /* compact image height */
   object-fit:cover;
   display:block;
 }
-.card-body{padding:14px}
-.card-body h2{margin:10px 0 6px;font-size:1.2rem;color:var(--ink)}
-.availability{margin:6px 0 0;color:var(--muted)}
 
-/* Badges for availability states */
+#models .card-body{padding:10px}
+#models .card-body h2{font-size:1rem;margin:6px 0 2px}
+#models .availability{font-size:.82rem;margin:0;color:var(--muted)}
+
+/* Badges */
 .badge{
-  display:inline-block;margin-right:6px;
-  font-size:.78rem;font-weight:800;
-  padding:5px 10px;border-radius:999px;border:1px solid var(--ring);
-  background:#fafafa;color:#1a1a1a;
+  display:inline-block;
+  margin-right:6px;
+  padding:3px 8px;
+  font-size:.7rem;
+  font-weight:800;
+  border-radius:999px;
+  border:1px solid var(--ring);
+  background:#fafafa;
+  color:#1a1a1a;
 }
 .badge.available{color:#0b6b3c;border-color:#cfe8d9;background:#eaf6ef}
 .badge.soon{color:#7a5309;border-color:#f2dfb0;background:#fbf4df}
 .badge.booked{color:#7a1e1e;border-color:#f0c7c7;background:#fdeeee}
 
-/* Buttons */
-.btn{
-  display:inline-block;background:var(--gold);color:#111;
-  padding:10px 16px;border-radius:999px;font-weight:800;text-decoration:none
-}
-.btn:hover{filter:brightness(1.05)}
-
 /* Footer */
-.footer{padding:22px 0;color:var(--muted);text-align:center}
+.footer{padding:16px 0;color:var(--muted);text-align:center}
 .foot{display:flex;flex-direction:column;gap:6px}
