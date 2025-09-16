@@ -4,71 +4,96 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CrownJewel — Montréal</title>
-  <meta name="description" content="CrownJewel — Montréal. Elegant companions, $280, discreet bookings.">
+  <meta name="description" content="CrownJewel — Montréal. Elegant, discreet, professional.">
   <link rel="canonical" href="https://www.crownjewel.com/" />
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
-  <!-- Top Nav -->
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#home">👑 CrownJewel <span class="brand-sub">Escorts</span></a>
-      <nav class="links">
-        <a href="#home">Home</a>
-        <a href="#models">Models</a>
-        <a href="#booking">Booking</a>
-        <a href="#employment">Employment</a>
-        <a href="#about">About</a>
-      </nav>
-      <!-- Phone number visible everywhere -->
-      <a class="btn call" href="tel:5142457931">514-245-7931</a>
-      <!-- Hamburger -->
-      <button id="menuButton" class="menu" aria-controls="drawer" aria-expanded="false" aria-label="Open menu">☰</button>
+  <!-- Header -->
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="CrownJewel — Home">
+        👑 CrownJewel <span class="brand-sub">Montréal</span>
+      </a>
+
+      <!-- Large phone number (desktop) -->
+      <a class="phone-large" href="tel:5142457931" aria-label="Call CrownJewel">
+        514-245-7931
+      </a>
+
+      <!-- Mobile menu button -->
+      <button class="menu" id="menuButton" aria-controls="drawer" aria-expanded="false" aria-label="Open menu">☰</button>
     </div>
+
+    <!-- Secondary nav (desktop) -->
+    <nav class="topnav wrap">
+      <a href="#home">Home</a>
+      <a href="#availability">Availability</a>
+      <a href="#models">Models</a>
+      <a href="#employment">Employment</a>
+      <a href="#about">About</a>
+      <a class="call-cta" href="tel:5142457931">Call 514-245-7931</a>
+    </nav>
   </header>
 
   <!-- Mobile Drawer -->
-  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
-    <nav class="drawer-links">
-      <a href="#home">Home</a>
-      <a href="#models">Models</a>
-      <a href="#booking">Booking</a>
-      <a href="#employment">Employment</a>
-      <a href="#about">About</a>
-      <a class="btn call" href="tel:5142457931">Call 514-245-7931</a>
-    </nav>
-  </aside>
+  <nav class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <a href="#home">Home</a>
+    <a href="#availability">Availability</a>
+    <a href="#models">Models</a>
+    <a href="#employment">Employment</a>
+    <a href="#about">About</a>
+    <a class="btn call" href="tel:5142457931">Call 514-245-7931</a>
+  </nav>
 
   <!-- Hero -->
   <section id="home" class="hero" aria-label="Hero">
-    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
     <div class="wrap hero-body">
-      <h1>Modern Luxury Companionship</h1>
-      <p class="lead">Montréal’s exclusive companions — elegance, discretion, and seamless booking.</p>
+      <h1>Montréal • Elegant & Discreet</h1>
+      <p class="lead">Professional, respectful, and seamless introductions.</p>
       <div class="cta">
-        <a href="#models" class="btn">View Models</a>
-        <a href="#booking" class="btn btn-ghost">Book Now</a>
+        <a href="#availability" class="btn">Today’s Availability</a>
+        <a href="#models" class="btn btn-ghost">View Models</a>
       </div>
+      <!-- Mobile phone button (always visible on small screens) -->
+      <a class="btn phone-mobile" href="tel:5142457931" aria-label="Call CrownJewel">Call 514-245-7931</a>
     </div>
   </section>
 
-  <!-- Highlights -->
-  <section class="highlights">
-    <div class="wrap grid-3">
-      <div class="hi">
-        <div class="hi-mark">✓</div>
-        <h3>Curated</h3>
-        <p>Boutique roster of professional companions.</p>
+  <!-- Availability -->
+  <section id="availability" class="section section-alt">
+    <div class="wrap">
+      <h2 class="title center">Today’s Availability</h2>
+      <p class="muted center small">Times are approximate and subject to verification.</p>
+
+      <div class="schedule-list" id="scheduleList" aria-live="polite">
+        <!-- Example items (edit these times/names as needed) -->
+        <article class="schedule-item">
+          <div class="row">
+            <span class="model-name">Ruby</span>
+            <span class="status available">Available</span>
+          </div>
+          <div class="time-range">Now – 3:00 pm</div>
+        </article>
+
+        <article class="schedule-item">
+          <div class="row">
+            <span class="model-name">Rosie</span>
+            <span class="status limited">Soon</span>
+          </div>
+          <div class="time-range">11:00 am – 1:30 pm</div>
+        </article>
+
+        <!-- Add more items as needed -->
       </div>
-      <div class="hi">
-        <div class="hi-mark">🛡️</div>
-        <h3>Discreet</h3>
-        <p>Private, respectful, adult-only (19+).</p>
-      </div>
-      <div class="hi">
-        <div class="hi-mark">💎</div>
-        <h3>Effortless</h3>
-        <p>Fast confirmations and clear communication.</p>
+
+      <!-- Optional: tiny legend -->
+      <div class="legend small center muted">
+        <span class="dot avail"></span> Available &nbsp; • &nbsp;
+        <span class="dot soon"></span> Soon &nbsp; • &nbsp;
+        <span class="dot booked"></span> Booked
       </div>
     </div>
   </section>
@@ -76,8 +101,7 @@
   <!-- Models -->
   <section id="models" class="section">
     <div class="wrap">
-      <h2 class="title">Models</h2>
-      <p class="muted center">Montréal • All bookings subject to verification</p>
+      <h2 class="title center">Models</h2>
       <div class="cards">
         <!-- Ruby -->
         <article class="card">
@@ -85,7 +109,7 @@
             <img class="thumb-img" src="images/ruby1.jpg" alt="Ruby — portrait" />
             <div class="card-body">
               <div class="row">
-                <h3>Ruby</h3>
+                <h3 class="name">Ruby</h3>
                 <span class="badge available">Available</span>
               </div>
             </div>
@@ -97,55 +121,30 @@
             <img class="thumb-img" src="images/rosie1.jpg" alt="Rosie — portrait" />
             <div class="card-body">
               <div class="row">
-                <h3>Rosie</h3>
-                <span class="badge available">Available</span>
+                <h3 class="name">Rosie</h3>
+                <span class="badge limited">Soon</span>
               </div>
             </div>
           </a>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- Booking -->
-  <section id="booking" class="section">
-    <div class="wrap">
-      <h2 class="title">Booking</h2>
-      <form id="bookingform" class ="form">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="Phone" />
-        <input type="text" placeholder="Preferred Date & Time" />
-        <input type="text" placeholder="Model Name" />
-        <textarea rows="6" placeholder="Request details (hours, venue, occasion)"></textarea>
-        <button class="btn" type="submit">Submit Request</button>
-      </form>
-      <ul class="notes small">
-        <li>Mutual respect and discretion are essential.</li>
-        <li>Time begins at the scheduled appointment; extensions subject to availability.</li>
-        <li>19+ only. ID verification may be required.</li>
-      </ul>
+        <!-- Add more model cards here -->
+      </div>
     </div>
   </section>
 
   <!-- Employment -->
   <section id="employment" class="section section-alt">
     <div class="wrap">
-      <h2 class="title">Employment</h2>
-      <p class="muted">
-        We’re always interested in welcoming professional, discreet, and reliable individuals to our team.
+      <h2 class="title center">Employment — Professional & Discreet</h2>
+      <p class="muted center">
+        We welcome polished, reliable, and respectful individuals who value professionalism and privacy.
       </p>
-      <p>
-        If you’d like to explore working with CrownJewel, please send your résumé and a brief introduction to 
-        <a href="mailto:Crownjewelescorts@gmail.com">Crownjewelescorts@gmail.com</a> or fill out our application form.
-      </p>
-      <form id ="employmentform" class ="form">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="Phone" />
-        <textarea rows="6" placeholder="Tell us about your experience, availability, and why you’d like to join"></textarea>
-        <button class="btn" type="submit">Submit Application</button>
-      </form>
+      <div class="center">
+        <a class="btn" href="mailto:Crownjewelescorts@gmail.com" aria-label="Email CrownJewel to apply">
+          Apply via Email
+        </a>
+      </div>
     </div>
   </section>
 
@@ -154,7 +153,10 @@
     <div class="wrap about">
       <div>
         <h2 class="title">About CrownJewel</h2>
-        <p>CrownJewel is a boutique concierge in Montréal focused on elegance, privacy, and ease. Our team ensures every introduction is comfortable, respectful, and memorable.</p>
+        <p>
+          CrownJewel is a boutique concierge in Montréal focused on elegance, privacy,
+          and ease. Our team ensures every introduction is comfortable, respectful, and memorable.
+        </p>
         <p class="muted small">By using this site, you confirm you are of legal age in your jurisdiction.</p>
       </div>
     </div>
@@ -164,40 +166,14 @@
   <footer class="footer">
     <div class="wrap foot">
       <div>© <span id="year"></span> CrownJewel — Montréal</div>
-      <div class="muted small">All models are 19+. Photos may be representative. Please respect local laws.</div>
+      <div class="muted small">
+        All models are 19+. Photos may be representative. Please respect local laws.
+      </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Year auto-update
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Drawer / mobile menu toggle
-    (function () {
-      const btn = document.getElementById('menuButton');
-      const drawer = document.getElementById('drawer');
-
-      function openDrawer() {
-        drawer.classList.add('open');
-        drawer.hidden = false;
-        btn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeDrawer() {
-        drawer.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-        setTimeout(() => { if (!drawer.classList.contains('open')) drawer.hidden = true; }, 250);
-      }
-      btn.addEventListener('click', () => {
-        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
-      });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-      document.addEventListener('click', e => {
-        if (drawer.classList.contains('open') && !drawer.contains(e.target) && e.target !== btn) closeDrawer();
-      });
-    })();
   </script>
 </body>
 </html>
