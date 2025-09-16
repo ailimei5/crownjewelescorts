@@ -11,46 +11,50 @@
   <!-- Top bar -->
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top">👑 CrownJewel</a>
+      <!-- Phone left -->
       <a class="phone" href="tel:5142457931">514-245-7931</a>
+      <!-- Brand right -->
+      <a class="brand" href="#top">👑 CrownJewel</a>
     </div>
   </header>
 
-  <!-- Models & Availability (vertical) -->
+  <!-- Optional centered logo at top of page -->
+  <div class="centered-logo">
+    <img src="images/FullLogo.jpg" alt="CrownJewel Logo">
+  </div>
+
+  <!-- Models grid -->
   <main id="models" class="section">
     <div class="wrap">
       <h1 class="title center">Models & Availability</h1>
       <p class="muted center small">Times are approximate and subject to verification.</p>
 
-      <div class="vertical-list">
-        <!-- Model -->
-        <article class="item">
-          <img src="images/ruby1.jpg" alt="Ruby" class="thumb">
-          <h2>Ruby</h2>
-          <p class="availability">
-            <span class="badge available">Available</span>
-            Now – 3:00 pm
-          </p>
+      <div class="cards">
+        <!-- Model 1 -->
+        <article class="card">
+          <img src="images/ruby1.jpg" alt="Ruby" class="thumb-img">
+          <div class="card-body">
+            <h2>Ruby</h2>
+            <p class="availability">
+              <span class="badge available">Available</span>
+              Now – 3:00 pm
+            </p>
+          </div>
         </article>
 
-        <!-- Model -->
-        <article class="item">
-          <img src="images/rosie1.jpg" alt="Rosie" class="thumb">
-          <h2>Rosie</h2>
-          <p class="availability">
-            <span class="badge soon">Soon</span>
-            11:00 am – 1:30 pm
-          </p>
+        <!-- Model 2 -->
+        <article class="card">
+          <img src="images/rosie1.jpg" alt="Rosie" class="thumb-img">
+          <div class="card-body">
+            <h2>Rosie</h2>
+            <p class="availability">
+              <span class="badge soon">Soon</span>
+              11:00 am – 1:30 pm
+            </p>
+          </div>
         </article>
 
-        <!-- Add more models the same way -->
-        <!--
-        <article class="item">
-          <img src="images/NAME.jpg" alt="NAME" class="thumb">
-          <h2>NAME</h2>
-          <p class="availability"><span class="badge booked">Booked</span> Back at 6:00 pm</p>
-        </article>
-        -->
+        <!-- Add more models in same card format -->
       </div>
     </div>
   </main>
@@ -73,7 +77,6 @@
       <p class="center small muted">
         CrownJewel is a boutique concierge in Montréal focused on elegance, privacy, and ease.
       </p>
-      <p class="center small muted">By using this site you confirm you are of legal age in your jurisdiction.</p>
     </div>
   </section>
 

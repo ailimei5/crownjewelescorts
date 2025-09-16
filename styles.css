@@ -1,4 +1,4 @@
-/* CrownJewel — Vertical White Layout with Logo Watermark */
+/* CrownJewel — Horizontal Models Grid + Phone Left, Brand Right */
 
 :root{
   --bg:#ffffff;
@@ -13,26 +13,12 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family:Inter, system-ui, sans-serif;
   color:var(--ink);
   background:var(--bg);
   line-height:1.6;
-  position:relative;
 }
-
-/* Page-wide faint logo watermark */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("images/FullLogo.jpg") center 120px no-repeat;
-  background-size:480px auto;            /* watermark size */
-  opacity:.065;                          /* transparency */
-  pointer-events:none;
-  z-index:-1;
-}
-
-.wrap{max-width:680px;margin:0 auto;padding:0 18px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
 .center{text-align:center}
 .small{font-size:.92rem}
 .muted{color:var(--muted)}
@@ -41,35 +27,48 @@ body::before{
 /* Top bar */
 .nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--ring)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.brand{font-weight:800;text-decoration:none;color:var(--ink)}
 .phone{font-weight:800;text-decoration:none;color:var(--gold)}
+.brand{font-weight:800;text-decoration:none;color:var(--ink)}
+
+/* Centered logo block */
+.centered-logo{
+  text-align:center;
+  margin:20px 0;
+}
+.centered-logo img{
+  width:180px;
+  opacity:.9;
+}
 
 /* Sections */
 .section{padding:36px 0;border-bottom:1px solid var(--ring)}
 
-/* Vertical list (one column) */
-.vertical-list{display:flex;flex-direction:column;gap:24px}
-
-/* Model card */
-.item{
-  background:#fff;border:1px solid var(--ring);border-radius:var(--radius);
-  padding:18px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.04);
+/* Cards grid (models side by side) */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  margin-top:20px;
 }
-.item h2{margin:12px 0 6px;font-size:1.2rem}
-.thumb{
+.card{
+  background:#fff;border:1px solid var(--ring);border-radius:var(--radius);
+  overflow:hidden;text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.04);
+  padding-bottom:14px;
+}
+.thumb-img{
   width:100%;
-  max-width:340px;
   aspect-ratio:4/5;
   object-fit:cover;
-  border-radius:12px;
   display:block;
-  margin:0 auto;
 }
-
-/* Availability line */
+.card-body{padding:14px}
+.card-body h2{margin:10px 0 6px;font-size:1.2rem;color:var(--ink)}
 .availability{margin:6px 0 0;color:var(--muted)}
+
+/* Badges */
 .badge{
-  display:inline-block;margin-right:8px;
+  display:inline-block;margin-right:6px;
   font-size:.78rem;font-weight:800;
   padding:5px 10px;border-radius:999px;border:1px solid var(--ring);
   background:#fafafa;color:#1a1a1a;
