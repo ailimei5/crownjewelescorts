@@ -14,48 +14,49 @@
       <!-- Phone left -->
       <a class="phone" href="tel:5142457931">514-245-7931</a>
       <!-- Brand right -->
-      <a class="brand" href="#top">👑 CrownJewel</a>
+      <a class="brand" href="#top" aria-label="CrownJewel Home">👑 CrownJewel</a>
     </div>
   </header>
 
-  <!-- Optional centered logo at top of page -->
+  <!-- Optional centered logo on the page -->
   <div class="centered-logo">
     <img src="images/FullLogo.jpg" alt="CrownJewel Logo">
   </div>
 
-  <!-- Models grid -->
+  <!-- Models grid (preview cards only) -->
   <main id="models" class="section">
     <div class="wrap">
       <h1 class="title center">Models & Availability</h1>
       <p class="muted center small">Times are approximate and subject to verification.</p>
 
       <div class="cards">
-        <!-- Model 1 -->
+        <!-- Ruby (preview card) -->
         <article class="card">
-          <a class="card-link" href="profiles/ruby.html">
-          <img class="thumb-img" src="images/ruby1.jpg" alt="Ruby">
-          <div class="card-body">
-            <h2>Ruby</h2>
-            <p class="availability">
-              <span class="badge available">Available</span>
-              Now – 3:00 pm
-            </p>
-          </div>
+          <a class="card-link" href="profiles/ruby.html" aria-label="Open Ruby's profile">
+            <img class="thumb-img" src="images/ruby1.jpg" alt="Ruby" />
+            <div class="card-body">
+              <h2>Ruby</h2>
+              <p class="availability">
+                <span class="badge available">Available</span> Now – 3:00 pm
+              </p>
+            </div>
+          </a>
         </article>
 
-        <!-- Model 2 -->
+        <!-- Rosie (preview card) -->
         <article class="card">
-          <img src="images/rosie1.jpg" alt="Rosie" class="thumb-img">
-          <div class="card-body">
-            <h2>Rosie</h2>
-            <p class="availability">
-              <span class="badge soon">Soon</span>
-              11:00 am – 1:30 pm
-            </p>
-          </div>
+          <a class="card-link" href="profiles/rosie.html" aria-label="Open Rosie's profile">
+            <img class="thumb-img" src="images/rosie1.jpg" alt="Rosie" />
+            <div class="card-body">
+              <h2>Rosie</h2>
+              <p class="availability">
+                <span class="badge soon">Soon</span> 11:00 am – 1:30 pm
+              </p>
+            </div>
+          </a>
         </article>
 
-        <!-- Add more models in same card format -->
+        <!-- Add more preview cards the same way as you add models -->
       </div>
     </div>
   </main>
