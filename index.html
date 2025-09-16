@@ -4,50 +4,56 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CrownJewel — Montréal</title>
+  <meta name="description" content="CrownJewel — Montréal. Elegant, discreet, professional.">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Top Nav -->
+  <!-- Top bar -->
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#home">👑 CrownJewel</a>
-      <a class="phone-large" href="tel:5142457931">514-245-7931</a>
+      <a class="brand" href="#top">👑 CrownJewel</a>
+      <a class="phone" href="tel:5142457931">514-245-7931</a>
     </div>
   </header>
 
-  <!-- Availability -->
-  <section id="availability" class="section">
+  <!-- Models & Availability (vertical) -->
+  <main id="models" class="section">
     <div class="wrap">
-      <h2 class="title center">Today’s Availability</h2>
-      <div class="vertical-list">
-        <div class="item">
-          <h3>Ruby</h3>
-          <p>Now – 3:00 pm</p>
-        </div>
-        <div class="item">
-          <h3>Rosie</h3>
-          <p>11:00 am – 1:30 pm</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h1 class="title center">Models & Availability</h1>
+      <p class="muted center small">Times are approximate and subject to verification.</p>
 
-  <!-- Models -->
-  <section id="models" class="section">
-    <div class="wrap">
-      <h2 class="title center">Models</h2>
       <div class="vertical-list">
-        <div class="item">
+        <!-- Model -->
+        <article class="item">
           <img src="images/ruby1.jpg" alt="Ruby" class="thumb">
-          <h3>Ruby</h3>
-        </div>
-        <div class="item">
+          <h2>Ruby</h2>
+          <p class="availability">
+            <span class="badge available">Available</span>
+            Now – 3:00 pm
+          </p>
+        </article>
+
+        <!-- Model -->
+        <article class="item">
           <img src="images/rosie1.jpg" alt="Rosie" class="thumb">
-          <h3>Rosie</h3>
-        </div>
+          <h2>Rosie</h2>
+          <p class="availability">
+            <span class="badge soon">Soon</span>
+            11:00 am – 1:30 pm
+          </p>
+        </article>
+
+        <!-- Add more models the same way -->
+        <!--
+        <article class="item">
+          <img src="images/NAME.jpg" alt="NAME" class="thumb">
+          <h2>NAME</h2>
+          <p class="availability"><span class="badge booked">Booked</span> Back at 6:00 pm</p>
+        </article>
+        -->
       </div>
     </div>
-  </section>
+  </main>
 
   <!-- Employment -->
   <section id="employment" class="section">
@@ -65,12 +71,13 @@
     <div class="wrap">
       <h2 class="title center">About CrownJewel</h2>
       <p class="center small muted">
-        CrownJewel is a boutique concierge in Montréal focused on elegance, privacy,
-        and ease.
+        CrownJewel is a boutique concierge in Montréal focused on elegance, privacy, and ease.
       </p>
+      <p class="center small muted">By using this site you confirm you are of legal age in your jurisdiction.</p>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="wrap foot">
       <div>© <span id="year"></span> CrownJewel — Montréal</div>
