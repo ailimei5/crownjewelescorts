@@ -3,115 +3,270 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CrownJewel — Montréal</title>
-  <meta name="description" content="CrownJewel — Montréal. Elegant, discreet, professional.">
-  <link rel="stylesheet" href="styles.css" />
+  <title>Anna Claire — Montréal</title>
+  <meta name="description" content="Anna Claire — Montréal companion. Elegant, discreet, professional." />
+  <meta name="theme-color" content="#111827" />
+  <link rel="preload" as="image" href="images/hero.jpg" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0f17;--card:#121826;--muted:#8892a6;--text:#e5e7eb;--accent:#c084fc;--ring:#ffffff33;--brand:#eab308}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,23,.95),rgba(11,15,23,.75));backdrop-filter:saturate(120%) blur(10px);border-bottom:1px solid #ffffff12}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .brand .crown{filter:drop-shadow(0 1px 0 #000)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid #ffffff1a;background:#ffffff0a;transition:all .2s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px #00000040}
+    .btn.call{background:linear-gradient(135deg,#facc15 0%,#f59e0b 100%);color:#0b0f17;border:none;font-weight:700}
+    .hero{position:relative;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat;opacity:.28;z-index:-1;filter:saturate(70%) contrast(95%)}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;min-height:72vh;align-items:center;padding:60px 0}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:#ffffff12;border:1px solid #ffffff1a;color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.3px;text-transform:uppercase}
+    h1{font-size:44px;line-height:1.05;margin:14px 0 8px}
+    .lead{color:var(--muted);font-size:18px;max-width:46ch}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid #ffffff10;border-radius:18px;overflow:hidden;position:relative}
+    .card .body{padding:14px 14px 16px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid #ffffff20;background:#ffffff10}
+    .available{background:#16a34a22;border-color:#16a34a55;color:#a7f3d0}
+    .title{font-size:28px;margin:0 0 12px}
+    .section{padding:56px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .soft{color:var(--muted)}
+    .panel{background:var(--card);border:1px solid #ffffff10;border-radius:18px;padding:20px}
+    .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+    .list li{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);margin-top:10px;box-shadow:0 0 24px var(--accent)}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gallery img{aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:1px solid #ffffff1a;cursor:zoom-in}
+    .footer{border-top:1px solid #ffffff12;padding:30px 0;color:#9aa3b2}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .ghost{background:transparent;border:1px solid #ffffff24}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    .note{font-size:12px;color:#9aa3b2}
+    /* Modal */
+    .modal{position:fixed;inset:0;display:none;place-items:center;background:#000000cc;z-index:80}
+    .modal.open{display:grid}
+    .modal img{max-height:88vh;width:auto;border-radius:16px;border:1px solid #ffffff24}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr;min-height:auto;padding:48px 0}
+      .cards{grid-template-columns:1fr 1fr}
+      .grid-2{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 560px){
+      h1{font-size:34px}
+      .cards{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+    }
+  </style>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Anna Claire — Montréal" />
+  <meta property="og:description" content="Elegant, discreet, professional." />
+  <meta property="og:image" content="/images/hero.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://annaclaire.net" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anna Claire — Montréal" />
+  <meta name="twitter:description" content="Elegant, discreet, professional." />
+  <meta name="twitter:image" content="/images/hero.jpg" />
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anna Claire",
+    "image": "https://annaclaire.net/images/hero.jpg",
+    "url": "https://annaclaire.net",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Montréal",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    },
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
   <!-- Top bar -->
-  <header class="nav">
+  <header class="nav" id="top">
     <div class="wrap nav-inner">
-      <!-- CrownJewel brand on the left -->
-      <a class="brand" href="#top" aria-label="CrownJewel Home">👑 CrownJewel</a>
-      <!-- Phone number on the right -->
-      <a class="btn call" href="tel:+15142457931">514-245-7931</a>
+      <a class="brand" href="#top" aria-label="Home"><span class="crown" aria-hidden>👑</span> Anna Claire</a>
+      <nav aria-label="Primary">
+        <a class="btn ghost" href="#about">About</a>
+        <a class="btn ghost" href="#gallery">Gallery</a>
+        <a class="btn ghost" href="#availability">Availability</a>
+        <a class="btn call" href="tel:+15142457931" aria-label="Call 514‑245‑7931">Call 514‑245‑7931</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Models -->
-  <main id="models" class="section">
-    <div class="wrap">
-
-      <!-- Section 1: Available Today -->
-      <h1 class="title center">Available Today</h1>
-      <div class="cards">
-        <!-- Preview card — Rosie
-        <article class="card">
-          <a class="card-link" href="profiles/rosie.html" aria-label="Open Rosie's profile">
-            <img class="thumb-img" src="images/rosie1.jpg" alt="Rosie" />
-            <div class="card-body">
-              <h2>Rosie</h2>
-              <p class="availability">
-                <span class="badge available">Available</span> 11:00 am – 1:30 pm
-              </p>
-            </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="pill" aria-label="Tag">Montréal · Private companion</span>
+        <h1>Elegant. Discreet. <span style="color:var(--brand)">Unforgettable.</span></h1>
+        <p class="lead">Bonjour — I’m Anna. I offer refined, low‑volume companionship for respectful gentlemen in Montréal. Screening & advance bookings appreciated.</p>
+        <div class="cta-row" style="margin-top:18px">
+          <a class="btn call" href="sms:+15142457931?body=Bonjour%20Anna%2C%20">
+            Text to book
           </a>
-        </article>
-      -->
-
-        <!-- Preview card — Whiskey
-        <article class="card">
-          <a class="card-link" href="profiles/whiskey.html" aria-label="Open Whiskey's profile">
-            <img class="thumb-img" src="images/ToCome.jpg" alt="Whiskey" />
-            <div class="card-body">
-              <h2>Whiskey</h2>
-              <p class="availability">
-                <span class="badge available">Available</span> Now – 3:00 pm
-              </p>
-            </div>
-          </a>
-        </article>
-      -->
-      </div> <!-- /cards Available Today -->
-
-      <!-- Section 2: All Models -->
-      <h1 class="title center" style="margin-top:60px;">All Models</h1>
-      <div class="cards">
-
-        <!-- Preview card — Rosie (listed also in full roster) -->
-        <article class="card">
-          <a class="card-link" href="profiles/rosie.html" aria-label="Open Rosie's profile">
-            <img class="thumb-img" src="images/rosie1.jpg" alt="Rosie" />
-            <div class="card-body">
-              <h2>Rosie</h2>
-              <p class="availability">
-                <!--<span class="badge available">Available</span> 11:00 am – 1:30 pm-->
-              </p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Preview card — Sarah (listed also in full roster) -->
-        <article class="card">
-          <a class="card-link" href="profiles/sarah.html" aria-label="Open Sarah's profile">
-            <img class="thumb-img" src="images/sarah1.jpg" alt="Sarah" />
-            <div class="card-body">
-              <h2>Sarah</h2>
-              <p class="availability">
-                <!--<span class="badge available">Available</span> 11:00 am – 1:30 pm-->
-              </p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Preview card — Whiskey (listed also in full roster) -->
-        <article class="card">
-          <a class="card-link" href="profiles/whiskey.html" aria-label="Open Whiskey's profile">
-            <img class="thumb-img" src="images/ToCome.jpg" alt="Whiskey" />
-            <div class="card-body">
-              <h2>Whiskey</h2>
-              <p class="availability">
-                <!--<span class="badge available">Available</span> Now – 3:00 pm-->
-              </p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Add more preview cards for other models here -->
-      </div> <!-- /cards All Models -->
-
+          <a class="btn" href="#gallery">View gallery</a>
+          <a class="btn ghost" href="#etiquette">Etiquette</a>
+        </div>
+        <p class="note" style="margin-top:10px">By contacting me you confirm you’re 18+ and agree to courteous, non‑explicit communication.</p>
+      </div>
+      <aside aria-label="Portrait">
+        <img src="images/anna-portrait.jpg" alt="Portrait of Anna Claire" style="border-radius:18px;border:1px solid #ffffff1a;box-shadow:0 20px 60px #00000066" />
+      </aside>
     </div>
-  </main>
+  </section>
 
-  <!-- Footer -->
+  <!-- About & Etiquette -->
+  <section class="section" id="about">
+    <div class="wrap grid-2">
+      <article class="panel">
+        <h2 class="title">About</h2>
+        <p class="soft">Warm, poised, and university‑educated, I value meaningful conversation and unhurried time together. I host in a private, upscale setting or visit reputable hotels in the downtown core.</p>
+        <ul class="list" style="margin-top:14px">
+          <li><span class="dot"></span><div>Downtown Montréal · Outcall to quality hotels</div></li>
+          <li><span class="dot"></span><div>Low‑volume | advance booking preferred</div></li>
+          <li><span class="dot"></span><div>Screening required for new introductions</div></li>
+        </ul>
+      </article>
+      <article class="panel" id="etiquette">
+        <h2 class="title">Etiquette</h2>
+        <ul class="list">
+          <li><span class="dot"></span><div>Be punctual and communicate clearly. Respect boundaries; explicit talk is not entertained.</div></li>
+          <li><span class="dot"></span><div>Hygiene matters. A quick freshen‑up on arrival is appreciated.</div></li>
+          <li><span class="dot"></span><div>Discretion is paramount — for both of us.</div></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <h2 class="title" id="gallery-title">Gallery</h2>
+      <div class="gallery" id="galleryGrid">
+        <img src="images/anna1.jpg" alt="Gallery image 1" data-full="images/anna1.jpg" />
+        <img src="images/anna2.jpg" alt="Gallery image 2" data-full="images/anna2.jpg" />
+        <img src="images/anna3.jpg" alt="Gallery image 3" data-full="images/anna3.jpg" />
+        <img src="images/anna4.jpg" alt="Gallery image 4" data-full="images/anna4.jpg" />
+        <img src="images/anna5.jpg" alt="Gallery image 5" data-full="images/anna5.jpg" />
+        <img src="images/anna6.jpg" alt="Gallery image 6" data-full="images/anna6.jpg" />
+      </div>
+      <p class="note" style="margin-top:8px">Images are recent and genuine. For discretion, identifying details may be obscured.</p>
+    </div>
+  </section>
+
+  <!-- Availability -->
+  <section class="section" id="availability" aria-labelledby="avail-title">
+    <div class="wrap">
+      <h2 class="title" id="avail-title">Availability</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="images/anna1.jpg" alt="Availability card" />
+          <div class="body">
+            <h3 style="margin:0 0 6px">Today</h3>
+            <p class="soft" style="margin:0 0 8px"><span class="badge available">Available</span> 6:30 pm – 9:00 pm</p>
+            <div class="cta-row">
+              <a class="btn call" href="tel:+15142457931">Call</a>
+              <a class="btn" href="sms:+15142457931?body=Hi%20Anna%2C%20is%20tonight%20available%3F">Text</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/anna2.jpg" alt="Availability card" />
+          <div class="body">
+            <h3 style="margin:0 0 6px">This Week</h3>
+            <p class="soft" style="margin:0 0 8px">Thu–Sat · Evenings</p>
+            <div class="cta-row">
+              <a class="btn" href="#contact">Request</a>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="images/anna3.jpg" alt="Availability card" />
+          <div class="body">
+            <h3 style="margin:0 0 6px">Tours</h3>
+            <p class="soft" style="margin:0 0 8px">Upcoming: Toronto (TBD)</p>
+            <div class="cta-row">
+              <a class="btn" href="#contact">Join list</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap grid-2">
+      <div class="panel">
+        <h2 class="title" id="contact-title">Book</h2>
+        <p class="soft">To book, please share: preferred date/time, duration, hotel, and a brief introduction. New introductions: include LinkedIn or work site for light screening.</p>
+        <div class="cta-row" style="margin-top:10px">
+          <a class="btn call" href="sms:+15142457931?body=Bonjour%20Anna%2C%20My%20name%20is%20...">Text</a>
+          <a class="btn" href="mailto:hello@annaclaire.net?subject=Booking%20Request">Email</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h2 class="title">Frequently Asked</h2>
+        <ul class="list">
+          <li><span class="dot"></span><div>Do you see first‑time patrons? <span class="soft">Yes, with light screening and clear communication.</span></div></li>
+          <li><span class="dot"></span><div>Do you accept same‑day meetings? <span class="soft">Occasionally — texting is best for quick coordination.</span></div></li>
+          <li><span class="dot"></span><div>Do you provide explicit content or discuss explicit services? <span class="soft">No. Communication remains respectful and non‑explicit.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <div class="wrap foot">
-      <div>© <span id="year"></span> CrownJewel — Montréal</div>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Anna Claire — Montréal</div>
+      <div class="note">This website is for companionship and time only. Nothing illegal or explicit is offered or implied.</div>
     </div>
   </footer>
 
+  <!-- Modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Full-size image">
+    <img id="modalImg" src="" alt="Full size" />
+    <button class="sr-only" id="modalClose">Close</button>
+  </div>
+
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple gallery modal
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const close = () => { modal.classList.remove('open'); modalImg.src=''; };
+    document.getElementById('galleryGrid').addEventListener('click', (e)=>{
+      const t = e.target.closest('img');
+      if(!t) return;
+      modalImg.src = t.dataset.full || t.src;
+      modal.classList.add('open');
+    });
+    modal.addEventListener('click', close);
+    document.getElementById('modalClose').addEventListener('click', close);
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('*').forEach(el=> el.style.scrollBehavior='auto');
+    }
   </script>
 </body>
 </html>
