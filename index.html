@@ -39,7 +39,7 @@
     img{max-width:100%; display:block}
     .wrap{width:min(1180px, 92%); margin-inline:auto}
 
-    /* NAV */
+    /* TOP BAR */
     .topbar{
       background:var(--brand);
       color:#fff;
@@ -48,6 +48,8 @@
       font-size:14px;
       letter-spacing:.3px;
     }
+
+    /* NAV */
     .nav{
       position:sticky;
       top:0;
@@ -70,21 +72,12 @@
       letter-spacing:.4px;
     }
     .brand em{font-style:normal; color:var(--brand)}
-
     .nav a.btn{
       padding:10px 14px;
       border-radius:12px;
       border:1px solid var(--line);
       background:var(--panel);
     }
-    .nav .cta{
-      background:linear-gradient(180deg, var(--brand), var(--brand-2));
-      color:#fff;
-      font-weight:600;
-      border:none;
-    }
-
-    /* PHONE BOX */
     .phone-box{
       background:var(--brand);
       color:#fff;
@@ -101,7 +94,6 @@
     /* HERO */
     .hero{
       padding:72px 0 26px;
-      position:relative;
       text-align:center;
     }
     .hero h1{
@@ -214,6 +206,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- TOPBAR -->
   <div class="topbar">✨ Available Today • All Models Verified ✨</div>
@@ -236,3 +229,93 @@
     <h1>Crown Jewel MODELS</h1>
     <p class="sub">«Private luxury, hand-picked companions — where discretion meets indulgence.» Our curated boutique provides elegant dinner dates and social companionship with verified models and hostesses.</p>
   </section>
+
+  <!-- AVAILABLE TODAY -->
+  <section id="available">
+    <div class="wrap">
+      <div class="head">
+        <h2>Available Today</h2>
+        <p class="muted">A rotating selection of companions currently available. Contact our coordinator to confirm timings.</p>
+      </div>
+
+      <div class="grid" role="list">
+        <!-- ROSIE -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/rosie.html" aria-label="Open Rosie profile">
+            <div class="media">
+              <img src="images/rosie1.jpg" alt="Rosie" loading="lazy">
+            </div>
+            <div class="body">
+              <h3>Rosie</h3>
+              <div class="meta">Elegant • VIP dinners</div>
+            </div>
+          </a>
+        </article>
+
+        <!-- KIKI -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/kiki.html" aria-label="Open Kiki profile">
+            <div class="media">
+              <img src="images/kiki1.jpg" alt="Kiki" loading="lazy">
+            </div>
+            <div class="body">
+              <h3>Kiki</h3>
+              <div class="meta">Charming • Petite</div>
+            </div>
+          </a>
+        </article>
+
+        <!-- SARAH -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/sarah.html" aria-label="Open Sarah profile">
+            <div class="media">
+              <img src="images/sarah1.jpg" alt="Sarah" loading="lazy">
+            </div>
+            <div class="body">
+              <h3>Sarah</h3>
+              <div class="meta">Warm • Sophisticated</div>
+            </div>
+          </a>
+        </article>
+
+        <!-- WHISKEY -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/whiskey.html" aria-label="Open Whiskey profile">
+            <div class="media">
+              <img src="images/whiskey1.jpg" alt="Whiskey" loading="lazy">
+            </div>
+            <div class="body">
+              <h3>Whiskey</h3>
+              <div class="meta">Confident • Bilingual</div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section id="concept">
+    <div class="wrap">
+      <div class="head"><h2>Concept</h2></div>
+      <div class="panel">
+        <p>Welcome to our exclusive introduction boutique. For over a decade, we have arranged confidential social companionship for discerning clients. Our coordinators take the time to understand your preferences to ensure an impeccable match. We prioritize discretion, punctuality, and refined etiquette.</p>
+        <p>Our companions are authentic, well-mannered, and travel-ready for dinner dates, galas, and private events. Custom itineraries can be arranged on request through our concierge partners.</p>
+        <p><strong>Important:</strong> We offer companionship only. No illegal services are offered or implied. All communication must remain respectful and professional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap" style="display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between">
+      <div>© <span id="year"></span> Crown Jewel Companions. All rights reserved.</div>
+      <div class="muted">Discretion • Integrity • Respect</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
