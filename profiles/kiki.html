@@ -3,32 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kiki — CrownJewel Montréal</title>
-  <meta name="description" content="Kiki — CrownJewel Montréal. Profile, bio, and gallery.">
-  <link rel="canonical" href="https://www.crownjewel.com/profiles/kiki" />
-  <link rel="stylesheet" href="../styles.css" />
-  <script defer src="../main.js"></script>
+  <title>Kiki — Crown Jewel Montréal</title>
+  <meta name="description" content="Kiki — Crown Jewel Montréal. Profile, bio, and gallery." />
+  <link rel="canonical" href="https://crownjewelescorts.ca/profiles/kiki" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#faf8f6; --panel:#ffffff; --ink:#171717; --muted:#666;
+      --brand:#c6a668; --brand-2:#9a814b; --line:#e7e4df;
+      --radius:18px; --shadow:0 6px 30px rgba(0,0,0,.08); --pill:#f3efe7;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; background:var(--bg); color:var(--ink); font:400 16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .wrap{width:min(1180px,92%); margin-inline:auto}
+
+    /* NAV */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); background:rgba(255,255,255,.9); border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
+    .brand{font-family:"Playfair Display",serif; font-weight:700; font-size:22px; letter-spacing:.4px}
+    .brand-sub{color:var(--brand); font-weight:600}
+    .links a{padding:10px 14px; border-radius:12px; border:1px solid var(--line); background:var(--panel); margin-right:8px}
+    .phone-box{background:var(--brand); color:#fff; padding:8px 14px; border-radius:12px; font-weight:600; box-shadow:var(--shadow)}
+    .phone-box:hover{background:var(--brand-2)}
+    .menu{display:none}
+
+    /* SECTION / TEXT */
+    h1{font:700 clamp(28px,3.6vw,42px)/1.05 "Playfair Display",serif; margin:0 0 10px}
+    h2.title{font:700 clamp(22px,3vw,32px)/1.15 "Playfair Display",serif; margin:0 0 12px}
+    p.muted{color:var(--muted)}
+    .section{padding:32px 0}
+
+    /* PROFILE HERO */
+    .profile-header{display:grid; grid-template-columns: 1.1fr 1fr; gap:24px; align-items:start}
+    .profile-cover{width:100%; border-radius:16px; aspect-ratio:2/3; object-fit:cover; background:#eee; box-shadow:var(--shadow)}
+    .profile-meta{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow:var(--shadow)}
+    .profile-tags{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 10px}
+    .pill{background:var(--pill); border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:14px}
+    .pill.success{background:#e9f8ef; border-color:#c9edd5; color:#1c7a3a}
+    .profile-lead{margin-top:10px}
+    .profile-cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid var(--line); background:var(--panel); font-weight:600}
+    .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-2)); border:none; color:#fff}
+    .btn-ghost{background:#fff}
+
+    /* GALLERY */
+    .gallery{display:grid; gap:16px; grid-template-columns:repeat(3, minmax(0,1fr))}
+    .gal{width:100%; aspect-ratio:2/3; object-fit:cover; border-radius:14px; background:#eee; box-shadow:var(--shadow); transition:transform .35s ease}
+    .gal:hover{transform:scale(1.02)}
+    .center{text-align:center}
+    .small{font-size:14px}
+
+    /* DETAILS */
+    .section-alt{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+    .profile-grid{display:grid; grid-template-columns:1fr 320px; gap:24px}
+    .profile-bio ul{padding-left:18px}
+    .notes li{margin:6px 0}
+    .profile-side .rate{background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:var(--shadow)}
+    .rate h3{margin:0 0 6px; font-size:18px}
+    .amount{font:700 26px/1 "Playfair Display",serif; color:#111}
+
+    /* FOOTER */
+    .footer{padding:28px 0}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:16px}
+
+    /* RESPONSIVE */
+    @media(max-width:980px){
+      .profile-header{grid-template-columns:1fr}
+      .profile-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .links{display:none}
+      .menu{display:block; background:none; border:1px solid var(--line); border-radius:10px; padding:8px 12px}
+      .gallery{grid-template-columns:repeat(2, minmax(0,1fr))}
+    }
+  </style>
 </head>
+
 <body>
-  <!-- Simple top bar with back link -->
+  <!-- NAV -->
   <header class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="../index.html#models">👑 CrownJewel <span class="brand-sub">Escorts</span></a>
+      <a class="brand" href="../index.html#top">⚜️ Crown Jewel <span class="brand-sub">Montréal</span></a>
       <nav class="links">
-        <a href="../index.html#home">Home</a>
-        <a href="../index.html#models">Models</a>
-        <a href="../index.html#rates">Rates</a>
+        <a href="../index.html#top">Home</a>
+        <a href="../index.html#available">Available</a>
+        <a href="../all-models.html">All Models</a>
       </nav>
-      <a class="btn call" href="tel:+15142457931">514-245-7931</a>
+      <a class="phone-box" href="tel:+15142457931">📞 (514) 245-7931</a>
       <button class="menu" aria-label="Open menu">☰</button>
     </div>
   </header>
 
-  <!-- Profile Hero -->
+  <!-- PROFILE HERO -->
   <section class="section profile-hero">
     <div class="wrap">
       <div class="profile-header">
-        <img class="profile-cover" src="../images/kiki1.jpg" alt="Kiki — cover">
+        <img class="profile-cover" src="../images/kiki1.jpg" alt="Kiki — cover photo">
         <div class="profile-meta">
           <h1>Kiki</h1>
           <div class="profile-tags">
@@ -37,53 +114,53 @@
             <span class="pill success">Available</span>
           </div>
           <p class="profile-lead muted">
-            Warm and charismatic, Kiki radiates energy and charm wherever she goes. Playful yet attentive, she combines an adventurous spirit with a genuine, down-to-earth nature.
-            <br><br>Age: 22
-            <br>Height: 4'9
-            <br>Weight: 90 lbs
-            <br>Measurements: 32A natural
-            <br>Hair: Brown
-            <br>Eyes: Grey
-            <br>Nationality: Latina Caucasian
-            <br>Language: English
-            <br>Favorite Drink: Mai Thais/Lemonade
-            <br>Tattoo: Yes
-            <br>Black gentleman: Yes
-            <br>Open for duo: Yes
-            <br>Open for couples: Yes
+            Petite and irresistibly charming, Kiki radiates playful confidence and warmth.
+            A natural conversationalist with a bubbly laugh and inviting energy.
+            <br><br><strong>Age:</strong> 22  
+            <br><strong>Height:</strong> 4'9"  
+            <br><strong>Weight:</strong> 90 lb  
+            <br><strong>Measurements:</strong> 32A (natural)  
+            <br><strong>Hair:</strong> Brown  
+            <br><strong>Eyes:</strong> Grey  
+            <br><strong>Nationality:</strong> Latina / Caucasian  
+            <br><strong>Languages:</strong> English  
+            <br><strong>Favourite drink:</strong> Mai Tai / Lemonade  
+            <br><strong>Tattoos:</strong> Yes  
+            <br><strong>Black gentleman:</strong> Yes  
+            <br><strong>Open for duo:</strong> Yes  
+            <br><strong>Open for couples:</strong> Yes
           </p>
           <div class="profile-cta">
-            <a class="btn" href="../index.html#booking">Book Kiki</a>
-            <a class="btn btn-ghost" href="../index.html#models">Back to Models</a>
+            <a class="btn btn-primary" href="tel:+15142457931">Call to Book</a>
+            <a class="btn" href="../index.html#available">Back to Available</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
+  <!-- GALLERY -->
   <section class="section">
     <div class="wrap">
       <h2 class="title">Gallery</h2>
       <div class="gallery">
-        <!-- Add non-explicit photos to /images and update filenames -->
         <img src="../images/kiki1.jpg" alt="Kiki photo 1" class="gal">
-        <img src="../images/kiki1.jpg" alt="Kiki photo 2" class="gal">
-        <img src="../images/kiki1.jpg" alt="Kiki photo 3" class="gal">
+        <img src="../images/kiki2.jpg" alt="Kiki photo 2" class="gal">
+        <img src="../images/kiki3.jpg" alt="Kiki photo 3" class="gal">
       </div>
-      <p class="small muted center">Photos are representative. Please respect privacy and local laws.</p>
+      <p class="small muted center" style="margin-top:10px">Photos are representative. Please respect privacy and local laws.</p>
     </div>
   </section>
 
-  <!-- Profile Details -->
+  <!-- DETAILS -->
   <section class="section section-alt">
     <div class="wrap">
       <h2 class="title">About Kiki</h2>
       <div class="profile-grid">
         <div class="profile-bio">
           <p>
-            Kiki delights in exploring new cuisines, weekend getaways, and stylish city walks. She appreciates thoughtful conversation and creating effortless, memorable moments. 
-            Availability most afternoons and select evenings; advance notice welcomed.
+            Kiki delights in exploring new cuisines, weekend getaways, and cozy city cafés.
+            She appreciates lighthearted conversation and spontaneous adventures that create effortless, genuine connections.
           </p>
           <ul class="notes small">
             <li>Professional, respectful, adult-only (21+).</li>
@@ -102,16 +179,14 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap foot">
-      <div>© <span id="year"></span> CrownJewel — Montréal</div>
+      <div>© <span id="year"></span> Crown Jewel — Montréal</div>
       <div class="muted small">All models are 21+. Please respect local laws.</div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
