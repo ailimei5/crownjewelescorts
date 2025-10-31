@@ -23,8 +23,8 @@
       --brand:#c6a668;
       --brand-2:#9a814b;
       --line:#e7e4df;
-      --radius:18px;
-      --shadow:0 6px 30px rgba(0,0,0,.08);
+      --radius:16px;
+      --shadow:0 6px 25px rgba(0,0,0,.06);
     }
 
     *{box-sizing:border-box}
@@ -64,7 +64,7 @@
       justify-content:space-between;
       gap:12px;
       padding:12px 0;
-      flex-wrap:wrap; /* allow wrapping */
+      flex-wrap:wrap;
     }
     .brand{
       font-family:"Playfair Display", serif;
@@ -137,7 +137,7 @@
     /* GRID + CARDS */
     .grid{
       display:grid;
-      gap:24px;
+      gap:22px;
       grid-template-columns:repeat(3, minmax(0, 1fr));
       justify-content:center;
     }
@@ -148,15 +148,15 @@
       overflow:hidden;
       box-shadow:var(--shadow);
       transition:transform .2s ease;
-      max-width:420px;
+      max-width:320px; /* smaller width */
       margin-inline:auto;
     }
     .card:hover{transform:translateY(-4px)}
     .media{
       position:relative;
-      aspect-ratio:2 / 3;
+      aspect-ratio:3 / 4; /* smaller height ratio */
       overflow:hidden;
-      border-radius:14px;
+      border-radius:12px;
       background:#eee;
     }
     .media img{
@@ -167,8 +167,8 @@
     }
     .card:hover .media img{transform:scale(1.05)}
 
-    @supports not (aspect-ratio: 2 / 3) {
-      .media{height:0; padding-top:150%;}
+    @supports not (aspect-ratio: 3 / 4) {
+      .media{height:0; padding-top:133%;}
       .media img{position:absolute; inset:0;}
     }
 
@@ -187,9 +187,9 @@
     }
     .card:hover .info{opacity:1; transform:translateY(0)}
 
-    .body{padding:16px; text-align:center}
-    .body h3{margin:0 0 4px; font-weight:650}
-    .meta{color:var(--muted); font-size:14px}
+    .body{padding:12px; text-align:center}
+    .body h3{margin:0 0 4px; font-weight:650; font-size:17px;}
+    .meta{color:var(--muted); font-size:13px}
 
     /* CONCEPT */
     .panel{
