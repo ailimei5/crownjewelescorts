@@ -23,8 +23,8 @@
       --brand:#c6a668;
       --brand-2:#9a814b;
       --line:#e7e4df;
-      --radius:16px;
-      --shadow:0 6px 25px rgba(0,0,0,.06);
+      --radius:14px;
+      --shadow:0 5px 20px rgba(0,0,0,.06);
     }
 
     *{box-sizing:border-box}
@@ -33,7 +33,7 @@
       margin:0;
       background:var(--bg);
       color:var(--ink);
-      font:400 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font:400 15px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     }
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
@@ -45,7 +45,7 @@
       color:#fff;
       text-align:center;
       padding:6px 0;
-      font-size:14px;
+      font-size:13px;
       letter-spacing:.3px;
     }
 
@@ -62,14 +62,14 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
-      padding:12px 0;
+      gap:10px;
+      padding:10px 0;
       flex-wrap:wrap;
     }
     .brand{
       font-family:"Playfair Display", serif;
       font-weight:700;
-      font-size:22px;
+      font-size:20px;
       letter-spacing:.4px;
       white-space:nowrap;
     }
@@ -77,27 +77,28 @@
 
     .nav nav{
       display:flex;
-      gap:10px;
+      gap:8px;
       flex-wrap:wrap;
       justify-content:center;
     }
 
     .nav a.btn{
-      padding:10px 14px;
-      border-radius:12px;
+      padding:8px 12px;
+      border-radius:10px;
       border:1px solid var(--line);
       background:var(--panel);
       font-weight:500;
+      font-size:15px;
     }
 
     .phone-box{
       background:var(--brand);
       color:#fff;
-      padding:8px 14px;
-      border-radius:12px;
+      padding:7px 12px;
+      border-radius:10px;
       font-weight:600;
       box-shadow:var(--shadow);
-      font-size:15px;
+      font-size:14px;
       letter-spacing:.3px;
       transition:background .2s ease;
       white-space:nowrap;
@@ -106,38 +107,38 @@
 
     /* HERO */
     .hero{
-      padding:72px 0 26px;
+      padding:60px 0 24px;
       text-align:center;
     }
     .hero h1{
-      font:700 clamp(28px,3.6vw,48px)/1.05 "Playfair Display", serif;
-      margin:0 0 12px;
+      font:700 clamp(26px,3.4vw,42px)/1.05 "Playfair Display", serif;
+      margin:0 0 10px;
     }
     .hero .sub{
       color:#333;
-      font-size:18px;
-      max-width:900px;
+      font-size:17px;
+      max-width:850px;
       margin:8px auto 0;
     }
 
     /* SECTION */
-    section{padding:42px 0}
-    section .head{margin-bottom:18px}
+    section{padding:38px 0}
+    section .head{margin-bottom:16px}
     h2{
-      font:700 clamp(24px,3vw,36px)/1.15 "Playfair Display", serif;
+      font:700 clamp(22px,2.8vw,32px)/1.15 "Playfair Display", serif;
       margin:0;
       text-align:center;
     }
     p.muted{
       color:var(--muted);
-      margin:6px auto 0;
+      margin:5px auto 0;
       text-align:center;
     }
 
     /* GRID + CARDS */
     .grid{
       display:grid;
-      gap:22px;
+      gap:20px;
       grid-template-columns:repeat(3, minmax(0, 1fr));
       justify-content:center;
     }
@@ -148,15 +149,15 @@
       overflow:hidden;
       box-shadow:var(--shadow);
       transition:transform .2s ease;
-      max-width:320px; /* smaller width */
+      max-width:280px; /* smaller card width */
       margin-inline:auto;
     }
     .card:hover{transform:translateY(-4px)}
     .media{
       position:relative;
-      aspect-ratio:3 / 4; /* smaller height ratio */
+      aspect-ratio:4 / 5; /* smaller height */
       overflow:hidden;
-      border-radius:12px;
+      border-radius:10px;
       background:#eee;
     }
     .media img{
@@ -167,29 +168,14 @@
     }
     .card:hover .media img{transform:scale(1.05)}
 
-    @supports not (aspect-ratio: 3 / 4) {
-      .media{height:0; padding-top:133%;}
+    @supports not (aspect-ratio: 4 / 5) {
+      .media{height:0; padding-top:125%;}
       .media img{position:absolute; inset:0;}
     }
 
-    .info{
-      position:absolute;
-      inset:auto 10px 10px 10px;
-      background:rgba(255,255,255,.85);
-      color:#222;
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:10px 12px;
-      font-size:14px;
-      opacity:0;
-      transform:translateY(6px);
-      transition:all .2s ease;
-    }
-    .card:hover .info{opacity:1; transform:translateY(0)}
-
-    .body{padding:12px; text-align:center}
-    .body h3{margin:0 0 4px; font-weight:650; font-size:17px;}
-    .meta{color:var(--muted); font-size:13px}
+    .body{padding:10px; text-align:center}
+    .body h3{margin:0 0 4px; font-weight:650; font-size:16px;}
+    .meta{color:var(--muted); font-size:12px}
 
     /* CONCEPT */
     .panel{
@@ -197,14 +183,15 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:18px;
+      padding:16px;
     }
 
     /* FOOTER */
     footer{
-      padding:36px 0;
+      padding:30px 0;
       border-top:1px solid var(--line);
       color:var(--muted);
+      font-size:14px;
     }
 
     /* RESPONSIVE FIXES */
@@ -258,9 +245,7 @@
             <div class="media">
               <img src="images/rosie1.jpg" alt="Rosie" loading="lazy">
             </div>
-            <div class="body">
-              <h3>Rosie</h3>
-            </div>
+            <div class="body"><h3>Rosie</h3></div>
           </a>
         </article>
 
@@ -270,9 +255,7 @@
             <div class="media">
               <img src="images/amanda1.jpg" alt="Amanda" loading="lazy">
             </div>
-            <div class="body">
-              <h3>Amanda</h3>
-            </div>
+            <div class="body"><h3>Amanda</h3></div>
           </a>
         </article>
 
@@ -282,9 +265,7 @@
             <div class="media">
               <img src="images/lexi1.jpg" alt="Lexi" loading="lazy">
             </div>
-            <div class="body">
-              <h3>Lexi</h3>
-            </div>
+            <div class="body"><h3>Lexi</h3></div>
           </a>
         </article>
 
@@ -294,9 +275,7 @@
             <div class="media">
               <img src="images/sarah1.jpg" alt="Sarah" loading="lazy">
             </div>
-            <div class="body">
-              <h3>Sarah</h3>
-            </div>
+            <div class="body"><h3>Sarah</h3></div>
           </a>
         </article>
 
@@ -306,9 +285,7 @@
             <div class="media">
               <img src="images/whiskey1.jpg" alt="Whiskey" loading="lazy">
             </div>
-            <div class="body">
-              <h3>Whiskey</h3>
-            </div>
+            <div class="body"><h3>Whiskey</h3></div>
           </a>
         </article>
       </div>
@@ -329,7 +306,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="wrap" style="display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between">
+    <div class="wrap" style="display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between">
       <div>© <span id="year"></span> Crown Jewel Companions. All rights reserved.</div>
       <div class="muted">Discretion • Integrity • Respect</div>
     </div>
