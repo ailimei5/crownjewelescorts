@@ -3,28 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Crown Jewel — High End Companions</title>
-  <meta name="description" content="High-end, international companionship boutique. Discreet, professional, curated." />
-  <meta name="theme-color" content="#ffffff" />
-  <meta property="og:title" content="Crown Jewel — High End Companions" />
-  <meta property="og:description" content="Private luxury, hand-picked companions — where discretion meets indulgence." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/preview.jpg" />
+  <title>Crown Studio — Portfolio</title>
+  <meta name="description" content="Compact, elegant portfolio grid with small image cards and overlay captions." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#faf8f6;
+      --bg:#f7f6f4;
       --panel:#ffffff;
       --ink:#171717;
       --muted:#666;
+      --line:#e8e3dc;
       --brand:#c6a668;
-      --brand-2:#9a814b;
-      --line:#e7e4df;
-      --radius:14px;
-      --shadow:0 5px 20px rgba(0,0,0,.06);
+      --shadow:0 6px 28px rgba(0,0,0,.08);
+      --radius:22px; /* big, soft corners like your ref */
     }
 
     *{box-sizing:border-box}
@@ -36,284 +30,193 @@
       font:400 15px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     }
     a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .wrap{width:min(1180px, 92%); margin-inline:auto}
+    img{display:block; width:100%; height:100%; object-fit:cover}
 
-    /* TOP BAR */
-    .topbar{
-      background:var(--brand);
-      color:#fff;
-      text-align:center;
-      padding:6px 0;
-      font-size:13px;
-      letter-spacing:.3px;
-    }
+    .wrap{width:min(1200px, 92%); margin-inline:auto}
 
-    /* NAV */
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:saturate(140%) blur(8px);
+    header{
+      position:sticky; top:0; z-index:10;
       background:rgba(255,255,255,.9);
+      backdrop-filter:saturate(140%) blur(8px);
       border-bottom:1px solid var(--line);
     }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:10px 0;
-      flex-wrap:wrap;
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 0;
     }
     .brand{
-      font-family:"Playfair Display", serif;
-      font-weight:700;
-      font-size:20px;
-      letter-spacing:.4px;
-      white-space:nowrap;
+      font:700 22px/1 "Playfair Display", serif;
+      letter-spacing:.3px;
     }
     .brand em{font-style:normal; color:var(--brand)}
 
-    .nav nav{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
+    .hero{padding:42px 0 10px; text-align:center}
+    .hero h1{font:700 clamp(26px,3.2vw,40px)/1.08 "Playfair Display", serif; margin:0 0 8px}
+    .hero p{color:#333; margin:0 auto; max-width:760px}
 
-    .nav a.btn{
-      padding:8px 12px;
-      border-radius:10px;
-      border:1px solid var(--line);
-      background:var(--panel);
-      font-weight:500;
-      font-size:15px;
-    }
-
-    .phone-box{
-      background:var(--brand);
-      color:#fff;
-      padding:7px 12px;
-      border-radius:10px;
-      font-weight:600;
-      box-shadow:var(--shadow);
-      font-size:14px;
-      letter-spacing:.3px;
-      transition:background .2s ease;
-      white-space:nowrap;
-    }
-    .phone-box:hover{background:var(--brand-2);}
-
-    /* HERO */
-    .hero{
-      padding:60px 0 24px;
-      text-align:center;
-    }
-    .hero h1{
-      font:700 clamp(26px,3.4vw,42px)/1.05 "Playfair Display", serif;
-      margin:0 0 10px;
-    }
-    .hero .sub{
-      color:#333;
-      font-size:17px;
-      max-width:850px;
-      margin:8px auto 0;
-    }
-
-    /* SECTION */
-    section{padding:38px 0}
-    section .head{margin-bottom:16px}
-    h2{
-      font:700 clamp(22px,2.8vw,32px)/1.15 "Playfair Display", serif;
-      margin:0;
-      text-align:center;
-    }
-    p.muted{
-      color:var(--muted);
-      margin:5px auto 0;
-      text-align:center;
-    }
-
-    /* GRID + CARDS */
+    /* === Compact Gallery === */
+    .gallery{padding:28px 0 44px}
     .grid{
       display:grid;
-      gap:20px;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
-      justify-content:center;
+      gap:18px;
+      /* 4 per row on desktop, auto scales down with breakpoints */
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      align-items:start;
     }
+    /* Card size kept small via a max-width and centered in its grid cell */
     .card{
       background:var(--panel);
       border:1px solid var(--line);
       border-radius:var(--radius);
-      overflow:hidden;
       box-shadow:var(--shadow);
-      transition:transform .2s ease;
-      max-width:280px; /* smaller card width */
-      margin-inline:auto;
+      overflow:hidden;
+      transition:transform .18s ease, box-shadow .18s ease;
+      max-width:260px;      /* << small like your screenshot */
+      margin-inline:auto;   /* center each card in its grid cell */
     }
-    .card:hover{transform:translateY(-4px)}
+    .card:hover{transform:translateY(-3px)}
+
     .media{
       position:relative;
-      aspect-ratio:4 / 5; /* smaller height */
+      aspect-ratio:4 / 5;   /* << compact portrait ratio */
+      border-radius:calc(var(--radius) - 6px);
       overflow:hidden;
-      border-radius:10px;
       background:#eee;
     }
-    .media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform 0.4s ease;
-    }
-    .card:hover .media img{transform:scale(1.05)}
 
-    @supports not (aspect-ratio: 4 / 5) {
-      .media{height:0; padding-top:125%;}
-      .media img{position:absolute; inset:0;}
+    /* Bottom overlay caption (name + arrow) */
+    .overlay{
+      position:absolute; inset:auto 10px 10px 10px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      background:linear-gradient(to top, rgba(0,0,0,.42), rgba(0,0,0,.26));
+      color:#fff; border-radius:14px;
+      border:1px solid rgba(255,255,255,.25);
+      font-size:14px; letter-spacing:.2px;
     }
+    .overlay b{font-weight:600}
+    .overlay .arrow{
+      display:inline-grid; place-items:center;
+      width:30px; height:30px; border-radius:999px;
+      background:rgba(255,255,255,.9); color:#222; font-weight:700;
+      transition:transform .18s ease;
+    }
+    .card:hover .overlay .arrow{transform:translateX(2px)}
 
-    .body{padding:10px; text-align:center}
-    .body h3{margin:0 0 4px; font-weight:650; font-size:16px;}
-    .meta{color:var(--muted); font-size:12px}
+    .body{padding:10px 12px; text-align:center}
+    .body h3{margin:0; font-weight:650; font-size:15px}
+    .muted{color:var(--muted); font-size:12px}
 
-    /* CONCEPT */
-    .panel{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:16px;
-    }
-
-    /* FOOTER */
-    footer{
-      padding:30px 0;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* RESPONSIVE FIXES */
-    @media (max-width:980px){
-      .grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
-    }
-    @media (max-width:640px){
-      .grid{grid-template-columns:1fr;}
-      .nav-inner{flex-direction:column; align-items:center; text-align:center;}
-      .nav nav{flex-direction:column; align-items:center;}
-      .phone-box{margin-top:8px;}
-    }
+    /* Breakpoints: 3 → 2 → 1 columns while keeping small cards */
+    @media (max-width:1100px){ .grid{grid-template-columns:repeat(3, minmax(0,1fr));} }
+    @media (max-width:820px){  .grid{grid-template-columns:repeat(2, minmax(0,1fr));} }
+    @media (max-width:520px){  .grid{grid-template-columns:1fr;} .card{max-width:320px} }
   </style>
 </head>
-
 <body>
-  <!-- TOPBAR -->
-  <div class="topbar">✨ Available Today • All Models Verified ✨</div>
-
-  <!-- NAVBAR -->
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top">👑 <em>Crown Jewel</em> Companions</a>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">👑 <em>Crown</em> Studio</div>
       <nav aria-label="Primary">
-        <a class="btn" href="#available">Available today</a>
-        <a class="btn" href="#concept">Concept</a>
-        <a class="btn" href="all-models.html">All Models</a>
+        <!-- optional nav buttons -->
       </nav>
-      <a href="tel:+15142457931" class="phone-box" aria-label="Call us">📞 (514) 245-7931</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero wrap" id="top">
-    <h1>Crown Jewel MODELS</h1>
-    <p class="sub">«Private luxury, hand-picked companions — where discretion meets indulgence.» Our curated boutique provides elegant dinner dates and social companionship with verified models and hostesses.</p>
+  <section class="hero wrap">
+    <h1>Portfolio</h1>
+    <p>Compact, elegant gallery showcasing creative talent. Fully responsive, small cards, 4-per-row on desktop.</p>
   </section>
 
-  <!-- AVAILABLE TODAY -->
-  <section id="available">
+  <section class="gallery">
     <div class="wrap">
-      <div class="head">
-        <h2>Available Today</h2>
-        <p class="muted">A rotating selection of companions currently available. Contact our coordinator to confirm timings.</p>
-      </div>
-
       <div class="grid" role="list">
-        <!-- ROSIE -->
+        <!-- CARD 1 -->
         <article class="card" role="listitem">
-          <a class="card-link" href="profiles/rosie.html" aria-label="Open Rosie profile">
+          <a href="#" aria-label="Open profile Alice">
             <div class="media">
-              <img src="images/rosie1.jpg" alt="Rosie" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Portrait of Alice" loading="lazy">
+              <div class="overlay">
+                <div><b>Alice</b><div class="muted">Creative Director</div></div>
+                <span class="arrow">→</span>
+              </div>
             </div>
-            <div class="body"><h3>Rosie</h3></div>
+            <div class="body"><h3>Alice</h3></div>
           </a>
         </article>
 
-        <!-- AMANDA -->
+        <!-- CARD 2 -->
         <article class="card" role="listitem">
-          <a class="card-link" href="profiles/amanda.html" aria-label="Open Amanda profile">
+          <a href="#" aria-label="Open profile Jordan">
             <div class="media">
-              <img src="images/amanda1.jpg" alt="Amanda" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop" alt="Portrait of Jordan" loading="lazy">
+              <div class="overlay">
+                <div><b>Jordan</b><div class="muted">Stylist</div></div>
+                <span class="arrow">→</span>
+              </div>
             </div>
-            <div class="body"><h3>Amanda</h3></div>
+            <div class="body"><h3>Jordan</h3></div>
           </a>
         </article>
 
-        <!-- LEXI -->
+        <!-- CARD 3 -->
         <article class="card" role="listitem">
-          <a class="card-link" href="profiles/lexi.html" aria-label="Open Lexi profile">
+          <a href="#" aria-label="Open profile Sam">
             <div class="media">
-              <img src="images/lexi1.jpg" alt="Lexi" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1552234994-66ba234fd567?q=80&w=800&auto=format&fit=crop" alt="Portrait of Sam" loading="lazy">
+              <div class="overlay">
+                <div><b>Sam</b><div class="muted">Host</div></div>
+                <span class="arrow">→</span>
+              </div>
             </div>
-            <div class="body"><h3>Lexi</h3></div>
+            <div class="body"><h3>Sam</h3></div>
           </a>
         </article>
 
-        <!-- SARAH -->
+        <!-- CARD 4 -->
         <article class="card" role="listitem">
-          <a class="card-link" href="profiles/sarah.html" aria-label="Open Sarah profile">
+          <a href="#" aria-label="Open profile Maya">
             <div class="media">
-              <img src="images/sarah1.jpg" alt="Sarah" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1544890225-2f3faec4cd60?q=80&w=800&auto=format&fit=crop" alt="Portrait of Maya" loading="lazy">
+              <div class="overlay">
+                <div><b>Maya</b><div class="muted">Presenter</div></div>
+                <span class="arrow">→</span>
+              </div>
             </div>
-            <div class="body"><h3>Sarah</h3></div>
+            <div class="body"><h3>Maya</h3></div>
           </a>
         </article>
 
-        <!-- WHISKEY -->
+        <!-- CARD 5 -->
         <article class="card" role="listitem">
-          <a class="card-link" href="profiles/whiskey.html" aria-label="Open Whiskey profile">
+          <a href="#" aria-label="Open profile Leo">
             <div class="media">
-              <img src="images/whiskey1.jpg" alt="Whiskey" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1552642986-ccb41e7059e7?q=80&w=800&auto=format&fit=crop" alt="Portrait of Leo" loading="lazy">
+              <div class="overlay">
+                <div><b>Leo</b><div class="muted">Coordinator</div></div>
+                <span class="arrow">→</span>
+              </div>
             </div>
-            <div class="body"><h3>Whiskey</h3></div>
+            <div class="body"><h3>Leo</h3></div>
+          </a>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="card" role="listitem">
+          <a href="#" aria-label="Open profile Noor">
+            <div class="media">
+              <img src="https://images.unsplash.com/photo-1524504388940-1c1b3d0b1d1a?q=80&w=800&auto=format&fit=crop" alt="Portrait of Noor" loading="lazy">
+              <div class="overlay">
+                <div><b>Noor</b><div class="muted">Talent</div></div>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+            <div class="body"><h3>Noor</h3></div>
           </a>
         </article>
       </div>
     </div>
   </section>
-
-  <!-- CONCEPT -->
-  <section id="concept">
-    <div class="wrap">
-      <div class="head"><h2>Concept</h2></div>
-      <div class="panel">
-        <p>Welcome to our exclusive introduction boutique. For over a decade, we have arranged confidential social companionship for discerning clients. Our coordinators take the time to understand your preferences to ensure an impeccable match. We prioritize discretion, punctuality, and refined etiquette.</p>
-        <p>Our companions are authentic, well-mannered, and travel-ready for dinner dates, galas, and private events. Custom itineraries can be arranged on request through our concierge partners.</p>
-        <p><strong>Important:</strong> We offer companionship only. No illegal services are offered or implied. All communication must remain respectful and professional.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap" style="display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between">
-      <div>© <span id="year"></span> Crown Jewel Companions. All rights reserved.</div>
-      <div class="muted">Discretion • Integrity • Respect</div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
