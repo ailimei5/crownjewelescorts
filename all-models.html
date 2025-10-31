@@ -27,11 +27,11 @@
     .nav{position:sticky; top:0; z-index:50;
          backdrop-filter:saturate(140%) blur(8px);
          background:rgba(255,255,255,.9); border-bottom:1px solid var(--line)}
-    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
-    .brand{font-family:"Playfair Display",serif; font-weight:700; font-size:22px; letter-spacing:.4px}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0; flex-wrap:wrap}
+    .brand{font-family:"Playfair Display",serif; font-weight:700; font-size:22px; letter-spacing:.4px; white-space:nowrap}
     .brand em{font-style:normal; color:var(--brand)}
     .nav a.btn{padding:10px 14px; border-radius:12px; border:1px solid var(--line); background:var(--panel)}
-    .phone-box{background:var(--brand); color:#fff; padding:8px 14px; border-radius:12px; font-weight:600; box-shadow:var(--shadow)}
+    .phone-box{background:var(--brand); color:#fff; padding:8px 14px; border-radius:12px; font-weight:600; box-shadow:var(--shadow); white-space:nowrap}
     .phone-box:hover{background:var(--brand-2)}
 
     /* PAGE HEADER */
@@ -51,7 +51,11 @@
 
     /* Uniform image frame */
     .media{position:relative; aspect-ratio:2/3; overflow:hidden; border-radius:14px; background:#eee}
-    .media img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+    .media img{
+      width:100%; height:100%; object-fit:cover; transition:transform .4s ease;
+      /* reserve space to prevent collapse on 404 */
+      width:100%; height:auto; aspect-ratio:2/3;
+    }
     .card:hover .media img{transform:scale(1.05)}
     @supports not (aspect-ratio:2/3){
       .media{height:0; padding-top:150%}
@@ -95,11 +99,9 @@
         <article class="card" role="listitem">
           <a class="card-link" href="profiles/rosie.html" aria-label="Open Rosie profile">
             <div class="media">
-              <img src="images/rosie1.jpg" alt="Rosie">
+              <img src="images/rosie1.jpg" alt="Rosie" loading="lazy" decoding="async">
             </div>
-            <div class="body">
-              <h3>Rosie</h3>
-            </div>
+            <div class="body"><h3>Rosie</h3></div>
           </a>
         </article>
 
@@ -107,11 +109,9 @@
         <article class="card" role="listitem">
           <a class="card-link" href="profiles/kiki.html" aria-label="Open Kiki profile">
             <div class="media">
-              <img src="images/kiki1.jpg" alt="Mimi">
+              <img src="images/kiki1.jpg" alt="Kiki" loading="lazy" decoding="async">
             </div>
-            <div class="body">
-              <h3>Kiki</h3>
-            </div>
+            <div class="body"><h3>Kiki</h3></div>
           </a>
         </article>
 
@@ -119,11 +119,9 @@
         <article class="card" role="listitem">
           <a class="card-link" href="profiles/sarah.html" aria-label="Open Sarah profile">
             <div class="media">
-              <img src="images/sarah1.jpg" alt="Sarah">
+              <img src="images/sarah1.jpg" alt="Sarah" loading="lazy" decoding="async">
             </div>
-            <div class="body">
-              <h3>Sarah</h3>
-            </div>
+            <div class="body"><h3>Sarah</h3></div>
           </a>
         </article>
 
@@ -131,15 +129,11 @@
         <article class="card" role="listitem">
           <a class="card-link" href="profiles/whiskey.html" aria-label="Open Whiskey profile">
             <div class="media">
-              <img src="images/whiskey1.jpg" alt="Whiskey">
+              <img src="images/whiskey1.jpg" alt="Whiskey" loading="lazy" decoding="async">
             </div>
-            <div class="body">
-              <h3>Whiskey</h3>
-            </div>
+            <div class="body"><h3>Whiskey</h3></div>
           </a>
         </article>
-
-        <!-- (Duplicate an article block above to add more models) -->
       </div>
     </div>
   </section>
