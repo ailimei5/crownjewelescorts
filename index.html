@@ -172,46 +172,13 @@
     .body{padding:10px; text-align:center}
     .body h3{margin:0 0 4px; font-weight:650; font-size:16px;}
 
-    /* CONCEPT / PANEL */
+    /* CONCEPT */
     .panel{
       background:var(--panel);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:16px;
-    }
-
-    /* SCHEDULE */
-    .schedule-grid{
-      display:grid;
-      grid-template-columns:repeat(7, minmax(0, 1fr));
-      gap:14px;
-      margin-top:20px;
-    }
-    .day-card{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:10px 12px;
-      font-size:14px;
-    }
-    .day-card h3{
-      margin:0 0 6px;
-      font-size:14px;
-      font-weight:600;
-      letter-spacing:.3px;
-      text-transform:uppercase;
-      color:var(--brand-2);
-    }
-    .day-list{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-    .day-list li{
-      padding:2px 0;
-      color:#333;
     }
 
     /* FOOTER */
@@ -225,17 +192,12 @@
     /* RESPONSIVE FIXES */
     @media (max-width:980px){
       .grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
-      .schedule-grid{grid-template-columns:repeat(3, minmax(0, 1fr));}
     }
     @media (max-width:640px){
       .grid{grid-template-columns:1fr;}
       .nav-inner{flex-direction:column; align-items:center; text-align:center;}
       .nav nav{flex-direction:column; align-items:center;}
       .phone-box{margin-top:8px;}
-      .schedule-grid{grid-template-columns:1fr 1fr;}
-    }
-    @media (max-width:460px){
-      .schedule-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -248,7 +210,7 @@
       <a class="brand" href="#top">👑 <em>Crown Jewel</em> Companions</a>
       <nav aria-label="Primary">
         <a class="btn" href="#available">Available today</a>
-        <a class="btn" href="#schedule">Schedule</a>
+        <a class="btn" href="#sunday">Schedule</a>
         <a class="btn" href="#concept">Concept</a>
         <a class="btn" href="all-models.html">All Models</a>
       </nav>
@@ -261,6 +223,7 @@
     <p class="sub">«Private luxury, hand-picked companions — where discretion meets indulgence.»</p>
   </section>
 
+  <!-- AVAILABLE TODAY -->
   <section id="available">
     <div class="wrap">
       <div class="head">
@@ -276,7 +239,7 @@
             <div class="media"><img src="images/rosie1.jpg" alt="Rosie"></div>
             <div class="body"><h3>Rosie</h3></div>
           </a>
-        </article>        
+        </article>
 
         <!-- LEXI -->
         <article class="card" role="listitem">
@@ -284,15 +247,15 @@
             <div class="media"><img src="images/lexi1.jpg" alt="Lexi"></div>
             <div class="body"><h3>Lexi</h3></div>
           </a>
-        </article>     
-           
+        </article>
+
         <!-- TINA -->
         <article class="card" role="listitem">
           <a class="card-link" href="profiles/tina.html">
             <div class="media"><img src="images/tina1.jpg" alt="Tina"></div>
             <div class="body"><h3>Tina</h3></div>
           </a>
-        </article>   
+        </article>
 
         <!-- STACY -->
         <article class="card" role="listitem">
@@ -300,73 +263,221 @@
             <div class="media"><img src="images/stacy1.jpg" alt="Stacy"></div>
             <div class="body"><h3>Stacy</h3></div>
           </a>
-        </article>  
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- WEEKLY SCHEDULE -->
-  <section id="schedule">
+  <!-- SUNDAY -->
+  <section id="sunday">
     <div class="wrap">
       <div class="head">
-        <h2>Weekly Schedule</h2>
-        <p class="muted">Who is typically available on each day of the week. Please text to confirm last-minute changes.</p>
+        <h2>Sunday</h2>
+        <p class="muted">Typically available on Sundays. Please confirm for same-day bookings.</p>
       </div>
+      <div class="grid" role="list">
+        <!-- Rosie -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/rosie.html">
+            <div class="media"><img src="images/rosie1.jpg" alt="Rosie"></div>
+            <div class="body"><h3>Rosie</h3></div>
+          </a>
+        </article>
 
-      <div class="schedule-grid">
-        <div class="day-card">
-          <h3>Sunday</h3>
-          <ul class="day-list">
-            <li>Rosie</li>
-            <li>Lexi</li>
-          </ul>
-        </div>
-        <div class="day-card">
-          <h3>Monday</h3>
-          <ul class="day-list">
-            <li>Tina</li>
-            <li>Stacy</li>
-          </ul>
-        </div>
-        <div class="day-card">
-          <h3>Tuesday</h3>
-          <ul class="day-list">
-            <li>Rosie</li>
-            <li>Tina</li>
-          </ul>
-        </div>
-        <div class="day-card">
-          <h3>Wednesday</h3>
-          <ul class="day-list">
-            <li>Lexi</li>
-            <li>Stacy</li>
-          </ul>
-        </div>
-        <div class="day-card">
-          <h3>Thursday</h3>
-          <ul class="day-list">
-            <li>Rosie</li>
-            <li>Stacy</li>
-          </ul>
-        </div>
-        <div class="day-card">
-          <h3>Friday</h3>
-          <ul class="day-list">
-            <li>Lexi</li>
-            <li>Tina</li>
-            <li>Rosie</li>
-          </ul>
-        </div>
-        <div class="day-card">
-          <h3>Saturday</h3>
-          <ul class="day-list">
-            <li>Rosie</li>
-            <li>Lexi</li>
-            <li>Tina</li>
-            <li>Stacy</li>
-          </ul>
-        </div>
+        <!-- Lexi -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/lexi.html">
+            <div class="media"><img src="images/lexi1.jpg" alt="Lexi"></div>
+            <div class="body"><h3>Lexi</h3></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONDAY -->
+  <section id="monday">
+    <div class="wrap">
+      <div class="head">
+        <h2>Monday</h2>
+        <p class="muted">Typically available on Mondays.</p>
+      </div>
+      <div class="grid" role="list">
+        <!-- Tina -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/tina.html">
+            <div class="media"><img src="images/tina1.jpg" alt="Tina"></div>
+            <div class="body"><h3>Tina</h3></div>
+          </a>
+        </article>
+
+        <!-- Stacy -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/stacy.html">
+            <div class="media"><img src="images/stacy1.jpg" alt="Stacy"></div>
+            <div class="body"><h3>Stacy</h3></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TUESDAY -->
+  <section id="tuesday">
+    <div class="wrap">
+      <div class="head">
+        <h2>Tuesday</h2>
+        <p class="muted">Typically available on Tuesdays.</p>
+      </div>
+      <div class="grid" role="list">
+        <!-- Rosie -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/rosie.html">
+            <div class="media"><img src="images/rosie1.jpg" alt="Rosie"></div>
+            <div class="body"><h3>Rosie</h3></div>
+          </a>
+        </article>
+
+        <!-- Tina -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/tina.html">
+            <div class="media"><img src="images/tina1.jpg" alt="Tina"></div>
+            <div class="body"><h3>Tina</h3></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEDNESDAY -->
+  <section id="wednesday">
+    <div class="wrap">
+      <div class="head">
+        <h2>Wednesday</h2>
+        <p class="muted">Typically available on Wednesdays.</p>
+      </div>
+      <div class="grid" role="list">
+        <!-- Lexi -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/lexi.html">
+            <div class="media"><img src="images/lexi1.jpg" alt="Lexi"></div>
+            <div class="body"><h3>Lexi</h3></div>
+          </a>
+        </article>
+
+        <!-- Stacy -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/stacy.html">
+            <div class="media"><img src="images/stacy1.jpg" alt="Stacy"></div>
+            <div class="body"><h3>Stacy</h3></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- THURSDAY -->
+  <section id="thursday">
+    <div class="wrap">
+      <div class="head">
+        <h2>Thursday</h2>
+        <p class="muted">Typically available on Thursdays.</p>
+      </div>
+      <div class="grid" role="list">
+        <!-- Rosie -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/rosie.html">
+            <div class="media"><img src="images/rosie1.jpg" alt="Rosie"></div>
+            <div class="body"><h3>Rosie</h3></div>
+          </a>
+        </article>
+
+        <!-- Stacy -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/stacy.html">
+            <div class="media"><img src="images/stacy1.jpg" alt="Stacy"></div>
+            <div class="body"><h3>Stacy</h3></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRIDAY -->
+  <section id="friday">
+    <div class="wrap">
+      <div class="head">
+        <h2>Friday</h2>
+        <p class="muted">Typically available on Fridays.</p>
+      </div>
+      <div class="grid" role="list">
+        <!-- Lexi -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/lexi.html">
+            <div class="media"><img src="images/lexi1.jpg" alt="Lexi"></div>
+            <div class="body"><h3>Lexi</h3></div>
+          </a>
+        </article>
+
+        <!-- Tina -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/tina.html">
+            <div class="media"><img src="images/tina1.jpg" alt="Tina"></div>
+            <div class="body"><h3>Tina</h3></div>
+          </a>
+        </article>
+
+        <!-- Rosie -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/rosie.html">
+            <div class="media"><img src="images/rosie1.jpg" alt="Rosie"></div>
+            <div class="body"><h3>Rosie</h3></div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SATURDAY -->
+  <section id="saturday">
+    <div class="wrap">
+      <div class="head">
+        <h2>Saturday</h2>
+        <p class="muted">Typically available on Saturdays.</p>
+      </div>
+      <div class="grid" role="list">
+        <!-- Rosie -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/rosie.html">
+            <div class="media"><img src="images/rosie1.jpg" alt="Rosie"></div>
+            <div class="body"><h3>Rosie</h3></div>
+          </a>
+        </article>
+
+        <!-- Lexi -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/lexi.html">
+            <div class="media"><img src="images/lexi1.jpg" alt="Lexi"></div>
+            <div class="body"><h3>Lexi</h3></div>
+          </a>
+        </article>
+
+        <!-- Tina -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/tina.html">
+            <div class="media"><img src="images/tina1.jpg" alt="Tina"></div>
+            <div class="body"><h3>Tina</h3></div>
+          </a>
+        </article>
+
+        <!-- Stacy -->
+        <article class="card" role="listitem">
+          <a class="card-link" href="profiles/stacy.html">
+            <div class="media"><img src="images/stacy1.jpg" alt="Stacy"></div>
+            <div class="body"><h3>Stacy</h3></div>
+          </a>
+        </article>
       </div>
     </div>
   </section>
@@ -374,8 +485,8 @@
   <section id="concept">
     <div class="wrap">
       <div class="panel">
-        <p>Welcome to our exclusive introduction boutique. For over a decade, we have arranged confidential social companionship for discerning clients. Our coordinators take the time to understand your preferences to ensure an impeccable match. We prioritize discretion, punctuality, and refined etiquette.</p> 
-        <p>Our companions are authentic, well-mannered, and travel-ready for dinner dates, galas, and private events. Custom itineraries can be arranged on request through our concierge partners.</p> 
+        <p>Welcome to our exclusive introduction boutique. For over a decade, we have arranged confidential social companionship for discerning clients. Our coordinators take the time to understand your preferences to ensure an impeccable match. We prioritize discretion, punctuality, and refined etiquette.</p>
+        <p>Our companions are authentic, well-mannered, and travel-ready for dinner dates, galas, and private events. Custom itineraries can be arranged on request through our concierge partners.</p>
         <p><strong>Important:</strong> We offer companionship only. No illegal services are offered or implied. All communication must remain respectful and professional.</p>
       </div>
     </div>
